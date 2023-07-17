@@ -48,8 +48,38 @@ body {
   font-size: clamp(40px, 8vw, 45px);
 }
 
+.contact-title {
+  margin: 0;
+  font-size: clamp(40px, 8vw, 60px);
+  color: #cdd6f7;
+}
+
+.full-width{
+  width:100%;
+}
+
 .title-heading {
   margin-top: 2rem;
-  font-size: clamp(40px, 8vw, 45px);
+  font-size: clamp(40px, 6vw, 45px);
   color: #cdd6f7;
+}
+
+.pretty-input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: #333333;
+  transition: box-shadow 0.3s ease;
+}
+
+.pretty-input:focus {
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pretty-input::placeholder {
+  color: #999999;
 }

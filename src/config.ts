@@ -43,8 +43,8 @@ const config: Config = {
     ],
 
     skills:{
-      dev:["JavaScript","HTML 5","CSS","Python","React JS","Next JS","Express JS","Node JS","Mongo DB"],
-      tools:["Git-Github", "Terminal", "Chrome Dev Tools", "Postman"],
+      dev:["JavaScript","HTML 5","CSS", "TypeScript", "Python","React JS","Next JS","Express JS","Node JS","Mongo DB"],
+      tools:["Git-Github", "Terminal", "Fedora", "Chrome Dev Tools", "Postman"],
 }
 }  
 
