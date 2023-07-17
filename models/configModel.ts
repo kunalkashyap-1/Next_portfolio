@@ -13,11 +13,19 @@ export interface Skills {
   tools: String[];
 }
 
+export interface Experiences{
+  companyName:string;
+  timeDuration:string;
+  position:string;
+  description:string[];
+}
+
 export interface Config {
   email: string;
   socialMedia: SocialMediaLink[];
   navLinks: NavLink[];
   skills: Skills;
+  experiences:Experiences[]
 }
 
 export interface Response {

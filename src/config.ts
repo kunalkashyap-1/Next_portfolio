@@ -1,51 +1,86 @@
-import {Config} from "../models/configModel";
+import { Config } from "../models/configModel";
 
 const config: Config = {
-    email: 'kunal.kashyap.8775@gmail.com',
-  
-    socialMedia: [
-      {
-        name: 'GitHub',
-        url: 'https',
-      },
-      {
-        name: 'Instagram',
-        url: 'https',
-      },
-      {
-        name: 'Twitter',
-        url: 'https',
-      },
-      {
-        name: 'Linkedin',
-        url: 'https',
-      },
+  email: "kunal.kashyap.8775@gmail.com",
 
+  socialMedia: [
+    {
+      name: "GitHub",
+      url: "https",
+    },
+    {
+      name: "Instagram",
+      url: "https",
+    },
+    {
+      name: "Twitter",
+      url: "https",
+    },
+    {
+      name: "Linkedin",
+      url: "https",
+    },
+  ],
+
+  navLinks: [
+    {
+      name: "About",
+      url: "/#about",
+    },
+    {
+      name: "Experience",
+      url: "/#experience",
+    },
+    {
+      name: "Projects",
+      url: "/#projects",
+    },
+    {
+      name: "Contact",
+      url: "/#contact",
+    },
+  ],
+
+  skills: {
+    dev: [
+      "JavaScript",
+      "HTML 5",
+      "CSS",
+      "TypeScript",
+      "Python",
+      "Express JS",
+      "Node JS",
+      "React JS",
+      "Next JS",
     ],
-  
-    navLinks: [
-      {
-        name: 'About',
-        url: '/#about',
-      },
-      {
-        name: 'Skills',
-        url: '/#Skills',
-      },
-      {
-        name: 'Projects',
-        url: '/#projects',
-      },
-      {
-        name: 'Contact',
-        url: '/#contact',
-      },
+    tools: [
+      "Git-Github",
+      "Terminal",
+      "Fedora",
+      "Chrome Dev Tools",
+      "Postman",
+      "Mongo DB",
     ],
-
-    skills:{
-      dev:["JavaScript","HTML 5","CSS", "TypeScript", "Python","React JS","Next JS","Express JS","Node JS","Mongo DB"],
-      tools:["Git-Github", "Terminal", "Fedora", "Chrome Dev Tools", "Postman"],
-}
-}  
-
+  },
+  experiences: [
+    {
+      companyName: "Tech Mahindra Foundation",
+      timeDuration: "May'20-july'20",
+      position: "Intern",
+      description: [
+        "Worked as system admin intern. managed and setup the linux system for the workplace.",
+        "hands on Chef and Ansible to deploy the system and packages.",
+      ],
+    },
+    {
+      companyName: "IBM",
+      timeDuration: "Aug'22-Sep'22",
+      position: "Trainee",
+      description: [
+        "Acquired proficiency in Python, NumPy, and Pandas through an extensive training program.",
+        "Demonstrated my expertise in AI and Deep Learning by implementing the KNN algorithm to develop a Movie Recommendation System. This project showcases my practical application of machine learning techniques.",
+      ],
+    },
+  ],
+};
 export default config;

@@ -1,7 +1,7 @@
 import NavBar from "../components/navbar";
 import Hero from "../components/hero";
 import About from "../components/about";
-import Skills from "../components/skills";
+import Experience from "../components/experience";
 import Projects from "../components/projects";
 import ContactForm from "../components/contactForm";
 import SideBar from "../components/sideSocials";
@@ -12,7 +12,7 @@ export default function Home(){
     <div className="section">
     <Hero />
     <About />
-    <Skills />
+    <Experience />
     <Projects />
     <ContactForm />
     </div>

@@ -13,7 +13,7 @@ export default function ContactForm() {
       <h1 className="contact-title">Love to hear from you,</h1>
       <h1 className="contact-title">Get in touch 👋</h1>
       <form onSubmit={handleSubmit}>
-        <div className="flex justify-between my-7">
+        <div className="flex justify-between my-7 flex-wrap">
           <div style={{ width: "45%" }} className="flex flex-col gap-3">
             <label htmlFor="name" style={{ color: "#f8f8f2" }}>
               Your name
@@ -22,7 +22,7 @@ export default function ContactForm() {
               type="text"
               id="name"
               className="full-width pretty-input"
-              placeholder="Enter Name"
+              placeholder="Please enter your name"
               required
             />
           </div>
@@ -34,7 +34,7 @@ export default function ContactForm() {
               type="email"
               id="email"
               className="full-width pretty-input"
-              placeholder="Enter Email"
+              placeholder="Enter your Email"
               required
             />
           </div>
