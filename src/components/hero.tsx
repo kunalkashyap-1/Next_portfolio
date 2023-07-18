@@ -1,9 +1,9 @@
 export default function Hero() {
-  const one = <h1>Hi, my name is</h1>;
+  const one = <h1 style={{color:"#6dddbc"}}>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Kunal Kashyap</h2>;
   const three = (
     <h3 className="medium-heading">
-     { "I'm a Full stack developer crafting immersive digital experiences."}
+     Building and developing full stack web solutions.
     </h3>
   );
   const four = (

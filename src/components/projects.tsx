@@ -9,7 +9,6 @@ export default async function projects() {
     <h1 className="title-heading" id="projects">
         Projects
       </h1>
-      <hr />
     <div className="container mx-auto">
       <div className="grid grid-cols-3 gap-5 my-5">
         {projects.map((item: Response, i: number) => (

@@ -1,10 +1,9 @@
-import Image from "next/image";
+import Float from "./float";
 
 export default function about() {
   return (
-    <div >
+    <div>
       <h1 id="about" className="title-heading">About Me</h1>
-      <hr />
       <div className="flex justify-between">
         <div>
           <p>
@@ -22,7 +21,7 @@ export default function about() {
             success in the digital realm.`}
           </p>
         </div>
-        <Image src="" alt="profile picture" width={500} height={300} />
+        <Float/>
       </div>
     </div>
   );
