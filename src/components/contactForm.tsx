@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import upRightArrow from "../up-right-arrow.png";
+import upRightArrow from "../icons/up-right-arrow.png";
 
 export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -10,7 +10,7 @@ export default function ContactForm() {
 
   return (
     <div>
-      <h1 className="contact-title">Love to hear from you,</h1>
+      <h1 className="contact-title" id="contact">Love to hear from you,</h1>
       <h1 className="contact-title">Get in touch 👋</h1>
       <form onSubmit={handleSubmit}>
         <div className="flex justify-between my-7 flex-wrap">

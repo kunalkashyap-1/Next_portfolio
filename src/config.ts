@@ -82,5 +82,32 @@ const config: Config = {
       ],
     },
   ],
+
+  images:{
+    Encypher_chat_app:{
+    image:"",
+    name:"Encypher Chat",
+    },    
+    News_NextJS:{
+      image:"",
+    name:"Prime Global",
+    },
+    feedParsify_doc:{
+      image:"",
+    name:"Feed parsify",
+    },
+    IBM_AI_project:{
+      image:"",
+    name:"Movie Recommendation system",
+    },
+    "Google-keep_Dummy":{
+      image:"",
+    name:"Google Keep clone",
+    },
+    "To-Do-List":{
+      image:"",
+    name:"TO-DO List",
+    },
+  }
 };
 export default config;

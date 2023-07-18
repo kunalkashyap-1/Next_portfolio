@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  scroll-behavior: smooth;
+}
 
 html {
   box-sizing: border-box;
   width: 100%;
-  scroll-behavior: smooth;
 }
 
 /* Scrollbar Styles */

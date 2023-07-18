@@ -5,8 +5,16 @@
 }
 
 .tabs_label{
+    position:relative;
     padding:10px 16px;
     cursor:pointer;
+    width: 9rem;
+    height:3rem;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 10px;
 }
 
 .tabs_radio{
@@ -16,7 +24,7 @@
 .tabs_content{
     order:1;
     width:100%;
-    border-bottom:3px solid #ddd;
+    border-bottom:1px solid #ccd6f6;
     line-height:1.5;
     font-size:0.9rem;
     display:none;
@@ -25,9 +33,37 @@
 .tabs_radio:checked+.tabs_label{
     font-weight:bold;
     color:#009578;
-    border-bottom:2px solid #009578;
+    /* border-bottom:2px solid #009578; */
 }
 
 .tabs_radio:checked+.tabs_label+.tabs_content{
     display:initial;
+}
+
+.tabs_label::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #009578;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-out;
+  }
+  
+.tabs_radio:checked + .tabs_label::after {
+    transform: scaleX(1);
+  }
+
+.tabs_title{
+    font-size:22px;
+    font-weight:500;
+    line-height: 1.3;
+    color: #ccd6f6;
+}
+
+.tabs_highlights{
+    color:#6dddbc;
 }

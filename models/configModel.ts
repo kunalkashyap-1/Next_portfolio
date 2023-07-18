@@ -13,11 +13,11 @@ export interface Skills {
   tools: String[];
 }
 
-export interface Experiences{
-  companyName:string;
-  timeDuration:string;
-  position:string;
-  description:string[];
+export interface Experiences {
+  companyName: string;
+  timeDuration: string;
+  position: string;
+  description: string[];
 }
 
 export interface Config {
@@ -25,7 +25,13 @@ export interface Config {
   socialMedia: SocialMediaLink[];
   navLinks: NavLink[];
   skills: Skills;
-  experiences:Experiences[]
+  experiences: Experiences[];
+  images: {
+    [repo_name: string]: {
+      image: string;
+      name: string;
+    };
+  };
 }
 
 export interface Response {
@@ -38,4 +44,4 @@ export interface Response {
   repo: string;
   stars: number;
   website: string;
-};
+}
