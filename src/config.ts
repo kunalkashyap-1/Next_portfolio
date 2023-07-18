@@ -85,27 +85,27 @@ const config: Config = {
 
   images:{
     Encypher_chat_app:{
-    image:"",
+    image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/encypher.png",
     name:"Encypher Chat",
     },    
     News_NextJS:{
-      image:"",
+      image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/primeglobal.png",
     name:"Prime Global",
     },
     feedParsify_doc:{
-      image:"",
+      image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/feedparsify.png",
     name:"Feed parsify",
     },
     IBM_AI_project:{
-      image:"",
+      image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/movierecommender.png",
     name:"Movie Recommendation system",
     },
     "Google-keep_Dummy":{
-      image:"",
+      image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/googlekeep.png",
     name:"Google Keep clone",
     },
     "To-Do-List":{
-      image:"",
+      image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/todo.png",
     name:"TO-DO List",
     },
   }

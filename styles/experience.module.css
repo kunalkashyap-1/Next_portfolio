@@ -24,7 +24,7 @@
 .tabs_content{
     order:1;
     width:100%;
-    border-bottom:1px solid #ccd6f6;
+    /* border-bottom:1px solid #ccd6f6; */
     line-height:1.5;
     font-size:0.9rem;
     display:none;
@@ -46,11 +46,11 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 3px;
     background-color: #009578;
     transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease-out;
+    transform-origin: center;
+    transition: transform 0.3s ease;
   }
   
 .tabs_radio:checked + .tabs_label::after {
