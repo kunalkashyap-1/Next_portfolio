@@ -7,8 +7,10 @@ import rightArrow from "../icons/right-chevron.png";
 
 export default function Experience() {
     useEffect(()=>{
-        const radioButton = document.getElementById(`exp0`);
+        const radioButton = document.getElementById(`exp0`) as HTMLInputElement;
+        if(radioButton){
         radioButton.checked = true;
+        }
     },[])
   return (
     <div>
