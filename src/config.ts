@@ -64,21 +64,21 @@ const config: Config = {
   },
   experiences: [
     {
-      companyName: "Tech Mahindra Foundation",
-      timeDuration: "May'20-july'20",
-      position: "Intern",
-      description: [
-        "Worked as system admin intern. managed and setup the linux system for the workplace.",
-        "hands on Chef and Ansible to deploy the system and packages.",
-      ],
-    },
-    {
       companyName: "IBM",
       timeDuration: "Aug'22-Sep'22",
       position: "Trainee",
       description: [
         "Acquired proficiency in Python, NumPy, and Pandas through an extensive training program.",
         "Demonstrated my expertise in AI and Deep Learning by implementing the KNN algorithm to develop a Movie Recommendation System. This project showcases my practical application of machine learning techniques.",
+      ],
+    },
+    {
+      companyName: "Tech Mahindra Foundation",
+      timeDuration: "May'20-july'20",
+      position: "Intern",
+      description: [
+        "Worked as system admin intern. managed and setup the linux system for the workplace.",
+        "hands on Chef and Ansible to deploy the system and packages.",
       ],
     },
   ],

@@ -84,6 +84,7 @@ export default function Float() {
       <div
         id="container"
         style={{
+          display:"inline-block",
           perspective: "25px",
           margin: "2rem",
         }}
@@ -91,8 +92,8 @@ export default function Float() {
         <div
           id="inner"
           style={{
-            width: "24em",
-            height: "18em",
+            width: "24rem",
+            height: "18rem",
             backgroundColor: "white",
             boxShadow: "2px 2px 50px rgba(0, 0, 0, 0.2)",
             transition: "transform 0.5s",

@@ -4,7 +4,10 @@ export default function about() {
   return (
     <div>
       <h1 id="about" className="title-heading">About Me</h1>
-      <div className="flex justify-between">
+      <div className={`md:flex md:flex-row-reverse`}>
+      <div className="flex justify-center">
+        <Float/>
+      </div>
         <div>
           <p>
             {`Hello, I'm Kunal Kashyap, a highly skilled Full Stack Developer proficient in 
@@ -21,7 +24,6 @@ export default function about() {
             success in the digital realm.`}
           </p>
         </div>
-        <Float/>
       </div>
     </div>
   );
