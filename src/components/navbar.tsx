@@ -2,6 +2,7 @@
 import config from "../config";
 import { NavLink } from "../../models/configModel";
 import React, { useState } from "react";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,14 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <h1 className="navbar-brand">My Website</h1>
+        <a href="/">
+      <Image 
+      src="/../icons/logo.png"
+      alt="logo"
+      width={300}
+      height={200}
+      />
+      </a>
       <div
         className={`menu-icon ${isMenuOpen ? "open" : ""}`}
         onClick={toggleMenu}
