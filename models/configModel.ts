@@ -1,5 +1,5 @@
 export interface SocialMediaLink {
-  name: string;
+  image: string;
   url: string;
 }
 

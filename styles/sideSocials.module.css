@@ -27,6 +27,7 @@
 
 .anchors:hover,.anchors:focus {
   transform: translateY(-3px);
+  transition: transform 0.2s ease;
 }
 
 .anchors > svg {

@@ -5,20 +5,20 @@ const config: Config = {
 
   socialMedia: [
     {
-      name: "GitHub",
-      url: "https",
+      image: "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/github.png",
+      url: "https://github.com/kunalkashyap-1",
     },
     {
-      name: "Instagram",
-      url: "https",
+      image: "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/instagram.png?raw=true",
+      url: "https://www.instagram.com/encrypted_kunal/",
     },
     {
-      name: "Twitter",
-      url: "https",
+      image: "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/twitter.png?raw=true",
+      url: "https://twitter.com/kunal_code",
     },
     {
-      name: "Linkedin",
-      url: "https",
+      image: "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/linkedin.png?raw=true",
+      url: "https://www.linkedin.com/in/kunal-kashyap-a0798222b/",
     },
   ],
 

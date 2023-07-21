@@ -13,12 +13,15 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-        <a href="/">
+        <a href="/" className="logo">
       <Image 
-      src="/../icons/logo.png"
+      src="https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/logo.png"
       alt="logo"
-      width={300}
-      height={200}
+      width={50}
+      height={50}
+      style={{
+        width:"50"
+      }}
       />
       </a>
       <div
