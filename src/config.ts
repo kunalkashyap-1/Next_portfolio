@@ -21,7 +21,7 @@ const config: Config = {
       url: "https://www.linkedin.com/in/kunal-kashyap-a0798222b/",
     },
     {
-      image:"",
+      image:"https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/link.png?raw=true",
       url:"",
     }
   ],

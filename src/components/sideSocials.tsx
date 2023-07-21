@@ -6,6 +6,7 @@ import Image from "next/image";
 const SideBar = () => {
   return <div className={styles.sidebar}>
     {config.socialMedia.map(({image, url}: SocialMediaLink, i:number )=>(
+      i!=4?
       <a target="_blank" className={styles.anchors} href={url} key={i}>
         <Image
         src={image}
@@ -13,7 +14,8 @@ const SideBar = () => {
         width={35}
         height={35}
         />
-      </a>
+      </a>:
+      null
     ))}
   </div>
 };

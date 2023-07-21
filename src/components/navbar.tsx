@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
       <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         {config.navLinks.map(({ name, url }: NavLink, i: number) => (
           <li key={i}>
-            <a href={url}>{name}</a>
+            <a href={url} onClick={toggleMenu}>{name}</a>
           </li>
         ))}
         <li>
