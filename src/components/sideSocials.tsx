@@ -10,8 +10,8 @@ const SideBar = () => {
         <Image
         src={image}
         alt="social"
-        width={30}
-        height={30}
+        width={35}
+        height={35}
         />
       </a>
     ))}

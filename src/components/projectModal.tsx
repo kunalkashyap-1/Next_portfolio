@@ -21,14 +21,24 @@ export default function ProjectsModal({ data }: inputProps) {
       <div className={styles.overlay}>
         <div className={styles.buttons}>
           <a target="_blank" href={data.link} className={styles.button}>
-            Github
+          <Image
+        src={config.socialMedia[0].image}
+        alt="social"
+        width={35}
+        height={35}
+        />
           </a>
           <a
             target="_blank"
             href={data.website}
             className={` ${!data.website ? "disabled" : styles.button}`}
           >
-            Link
+            <Image
+        src={config.socialMedia[5].image}
+        alt="social"
+        width={35}
+        height={35}
+        />
           </a>
         </div>
       </div>

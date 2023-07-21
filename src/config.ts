@@ -20,6 +20,10 @@ const config: Config = {
       image: "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/linkedin.png?raw=true",
       url: "https://www.linkedin.com/in/kunal-kashyap-a0798222b/",
     },
+    {
+      image:"",
+      url:"",
+    }
   ],
 
   navLinks: [
