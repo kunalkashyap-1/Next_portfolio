@@ -279,7 +279,9 @@ body {
   .hero h1 {
     padding-top: 0;
   }
+}
 
+@media (max-width: 380px) {
   .section {
     margin: 4rem 2rem;
   }
