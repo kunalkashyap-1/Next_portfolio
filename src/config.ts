@@ -47,22 +47,20 @@ const config: Config = {
 
   skills: {
     dev: [
-      "JavaScript",
       "HTML 5",
       "CSS",
+      "JavaScript",
       "TypeScript",
-      "Python",
       "Express JS",
-      "Node JS",
       "React JS",
       "Next JS",
     ],
     tools: [
       "Git-Github",
-      "Terminal",
       "Fedora",
       "Chrome Dev Tools",
       "Postman",
+      "Node JS",
       "Mongo DB",
     ],
   },
@@ -90,15 +88,15 @@ const config: Config = {
   images:{
     Encypher_chat_app:{
     image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/encypher.png",
-    name:"Encypher Chat",
+    name:"Encypher Chat App",
     },    
     News_NextJS:{
       image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/primeglobal.png",
-    name:"Prime Global",
+    name:"Prime Global News Site",
     },
     feedParsify_doc:{
       image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/feedparsify.png",
-    name:"Feed parsify",
+    name:"Feed parsify scraper",
     },
     IBM_AI_project:{
       image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/movierecommender.png",

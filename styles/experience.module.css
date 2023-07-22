@@ -1,7 +1,8 @@
 .tabs{
     display:flex;
     flex-wrap:wrap;
-    max-width:400px;
+    max-width:100%;
+    overflow-x:auto;
 }
 
 .tabs_label{
@@ -28,6 +29,7 @@
     line-height:1.5;
     font-size:0.9rem;
     display:none;
+    padding:2rem 0;
 }
 
 .tabs_radio:checked+.tabs_label{

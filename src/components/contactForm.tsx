@@ -9,12 +9,21 @@ export default function ContactForm() {
   };
 
   return (
-    <div>
-      <h1 className="contact-title" id="contact">Love to hear from you,</h1>
+    <div className="contact">
+      <h1 className="contact-title" id="contact">
+        Love to hear from you,
+      </h1>
       <h1 className="contact-title">Get in touch 👋</h1>
       <form onSubmit={handleSubmit}>
-        <div className="flex justify-between my-7 flex-wrap">
-          <div style={{ width: "45%" }} className="flex flex-col gap-3">
+        <div className="contact_inputs">
+          <div
+            style={{
+              minWidth: "200px",
+              flex: "1",
+              marginRight: "10px",
+            }}
+            className="flex flex-col gap-3"
+          >
             <label htmlFor="name" style={{ color: "#f8f8f2" }}>
               Your name
             </label>
@@ -26,7 +35,14 @@ export default function ContactForm() {
               required
             />
           </div>
-          <div style={{ width: "45%" }} className="flex flex-col gap-3">
+          <div
+            style={{
+              minWidth: "200px",
+              flex: "1",
+              marginRight: "10px",
+            }}
+            className="flex flex-col gap-3"
+          >
             <label htmlFor="email" style={{ color: "#f8f8f2" }}>
               Your email
             </label>
@@ -62,12 +78,7 @@ export default function ContactForm() {
           type="submit"
         >
           Just Send
-          <Image
-            src={upRightArrow}
-            alt="up icon"
-            width={17}
-            height={10}
-          />
+          <Image src={upRightArrow} alt="up icon" width={17} height={10} />
         </button>
       </form>
     </div>

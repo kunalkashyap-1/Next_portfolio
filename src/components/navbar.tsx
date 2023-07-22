@@ -13,16 +13,16 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-        <a href="/" className="logo">
-      <Image 
-      src="https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/logo.png"
-      alt="logo"
-      width={50}
-      height={50}
-      style={{
-        width:"50"
-      }}
-      />
+      <a href="/" className="logo">
+        <Image
+          src="https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/logo.png"
+          alt="logo"
+          width={50}
+          height={50}
+          style={{
+            width: "50",
+          }}
+        />
       </a>
       <div
         className={`menu-icon ${isMenuOpen ? "open" : ""}`}
@@ -35,7 +35,9 @@ const Navbar: React.FC = () => {
       <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         {config.navLinks.map(({ name, url }: NavLink, i: number) => (
           <li key={i}>
-            <a href={url} onClick={toggleMenu}>{name}</a>
+            <a href={url} onClick={toggleMenu}>
+              {name}
+            </a>
           </li>
         ))}
         <li>

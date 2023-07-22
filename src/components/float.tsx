@@ -89,7 +89,7 @@ export default function Float() {
           margin: "2rem",
           width: "24rem",
           minWidth: "16em",
-          // height: "18rem",
+          height: "18rem",
         }}
       >
         <div
@@ -106,7 +106,7 @@ export default function Float() {
           <Image
             src="https://raw.githubusercontent.com/kunalkashyap-1/kunalkashyap-1/master/assets/giphy.webp"
             alt="profile pic"
-            width={500}
+            width={300}
             height={300}
             style={{
                 width:"100%",

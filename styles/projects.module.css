@@ -1,9 +1,11 @@
 .card {
   position: relative;
+  max-width: 400px;
   width: 100%;
   height: 200px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin: auto;
 }
 
 .card img {
@@ -69,7 +71,7 @@
 }
 
 .button:hover {
-  background-color: #4CAAAA;
+  background-color: #4caaaa;
   /* color: #fff; */
 }
 

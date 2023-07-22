@@ -13,7 +13,7 @@ export default function Experience() {
         }
     },[])
   return (
-    <div>
+    <div className="experience">
       <h1 id="experience" className="title-heading">Experience</h1>
       <div className={styles.tabs}>
         {config.experiences.map((items, i: number) => (
