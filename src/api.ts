@@ -1,5 +1,5 @@
 import axios from "axios";
-import {Response} from "../models/configModel";
+import { Response } from "../models/configModel";
 
 export async function getRepos(): Promise<Response[]> {
   try {

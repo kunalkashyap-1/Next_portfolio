@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav data-aos="fade" className="navbar">
       <a href="/" className="logo">
         <Image
           src="https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/logo.png"
@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
           height={50}
           style={{
             width: "50",
-            height:"auto",
+            height: "auto",
           }}
         />
       </a>
@@ -35,13 +35,13 @@ const Navbar: React.FC = () => {
       </div>
       <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         {config.navLinks.map(({ name, url }: NavLink, i: number) => (
-          <li key={i}>
+          <li data-aos="fade-down" data-aos-delay={`${50 * i}`} key={i}>
             <a href={url} onClick={toggleMenu}>
               {name}
             </a>
           </li>
         ))}
-        <li>
+        <li data-aos="fade-down" data-aos-delay={`250`}>
           <a href="/resume" target="_blank">
             Resume
           </a>

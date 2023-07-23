@@ -1,8 +1,6 @@
 export default function Hero() {
   const one = (
-    <h1
-      className="big-heading"
-    >
+    <h1 className="big-heading">
       Hi, {`I'm`} <strong>Kunal Kashyap, </strong>
     </h1>
   );
@@ -31,16 +29,24 @@ export default function Hero() {
       effective and intuitive solutions.
     </p>
   );
-    const five = (
-      <a
-        className="linked_button"
-        target="_blank"
-        href="https://www.linkedin.com/in/kunal-kashyap-a0798222b/"
-      >
-        {`Let's`} talk
-      </a>
-    );
+  const five = (
+    <a
+      className="linked_button"
+      target="_blank"
+      href="https://www.linkedin.com/in/kunal-kashyap-a0798222b/"
+    >
+      {`Let's`} talk
+    </a>
+  );
 
   const items = [one, two, three, four, five];
-  return <div className="hero">{items.map((item, i) => item)}</div>;
+  return (
+    <div data-aos="fade" data-aos-delay="500" className="hero">
+      {items.map((item, i) => (
+        <span data-aos="fade-up" data-aos-delay={500 + 100 * i} key={i}>
+          {item}
+        </span>
+      ))}
+    </div>
+  );
 }

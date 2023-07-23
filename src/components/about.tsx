@@ -1,14 +1,19 @@
+"use client";
 import Float from "./float";
 import config from "../config";
 
 export default function about() {
   return (
-    <div className="about">
+    <div data-aos="fade-up" className="about">
       <h1 id="about" className="title-heading">
         About Me
       </h1>
       <div>
-        <div className={`md:flex md:flex-row-reverse`}>
+        <div
+          className={`md:flex md:flex-row-reverse`}
+          data-aos="fade-left"
+          data-aos-delay="100"
+        >
           <div className="flex justify-center">
             <Float />
           </div>
@@ -28,18 +33,11 @@ export default function about() {
           </div>
         </div>
         <div>
-          <p>
-            <span
-            // style={{
-            //   borderBottom: "1px solid #65ffdb",
-            //   margin: "5px",
-            // }}
-            >
-              Here are a few skills I’ve have acquired:{" "}
-            </span>
+          <p data-aos="fade-right" data-aos-delay="100">
+            <span>Here are a few skills I’ve have acquired: </span>
           </p>
           <div className="flex flex-wrap gap-8">
-            <div className="card">
+            <div data-aos="fade-right" data-aos-delay="150" className="card">
               <p
                 style={{
                   fontSize: "26px",
@@ -56,7 +54,7 @@ export default function about() {
                 ))}
               </ul>
             </div>
-            <div className="card">
+            <div data-aos="fade-right" data-aos-delay="200" className="card">
               <p
                 style={{
                   fontSize: "26px",

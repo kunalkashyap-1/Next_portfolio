@@ -89,7 +89,8 @@ export default function Float() {
           margin: "2rem",
           width: "22rem",
           minWidth: "16em",
-          height: "16rem",
+          maxHeight: "16em",
+          height: "auto",
         }}
       >
         <div
@@ -107,12 +108,8 @@ export default function Float() {
             src="https://raw.githubusercontent.com/kunalkashyap-1/kunalkashyap-1/master/assets/giphy.webp"
             alt="profile pic"
             width={300}
-            height={300}
-            style={{
-              width: "100%",
-              height: "100%",
-              minHeight: "16em",
-            }}
+            height={150}
+            layout="responsive"
           />
         </div>
       </div>

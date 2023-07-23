@@ -16,7 +16,6 @@ export default function ContactForm() {
     const publicKey = process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY!;
     // console.log(publicKey);
 
-
     emailjs.sendForm(serviceId, templateId, form.current!, publicKey).then(
       (result) => {
         // console.log(result.text);
@@ -30,7 +29,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="contact">
+    <div data-aos="fade-up" data-aos-duration={2000} className="contact">
       <h1 className="contact-title" id="contact">
         Love to hear from you,
       </h1>

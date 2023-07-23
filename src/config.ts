@@ -5,25 +5,30 @@ const config: Config = {
 
   socialMedia: [
     {
-      image: "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/github.png",
+      image:
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/github.png",
       url: "https://github.com/kunalkashyap-1",
     },
     {
-      image: "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/instagram.png?raw=true",
+      image:
+        "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/instagram.png?raw=true",
       url: "https://www.instagram.com/encrypted_kunal/",
     },
     {
-      image: "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/twitter.png?raw=true",
+      image:
+        "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/twitter.png?raw=true",
       url: "https://twitter.com/kunal_code",
     },
     {
-      image: "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/linkedin.png?raw=true",
+      image:
+        "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/linkedin.png?raw=true",
       url: "https://www.linkedin.com/in/kunal-kashyap-a0798222b/",
     },
     {
-      image:"https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/link.png?raw=true",
-      url:"",
-    }
+      image:
+        "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/link.png?raw=true",
+      url: "",
+    },
   ],
 
   navLinks: [
@@ -85,31 +90,37 @@ const config: Config = {
     },
   ],
 
-  images:{
-    Encypher_chat_app:{
-    image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/encypher.png",
-    name:"Encypher Chat App",
-    },    
-    News_NextJS:{
-      image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/primeglobal.png",
-    name:"Prime Global News Site",
+  images: {
+    Encypher_chat_app: {
+      image:
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/encypher.png",
+      name: "Encypher Chat App",
     },
-    feedParsify_doc:{
-      image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/feedparsify.png",
-    name:"Feed parsify scraper",
+    News_NextJS: {
+      image:
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/primeglobal.png",
+      name: "Prime Global News Site",
     },
-    IBM_AI_project:{
-      image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/movierecommender.png",
-    name:"Movie Recommendation system",
+    feedParsify_doc: {
+      image:
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/feedparsify.png",
+      name: "Feed parsify scraper",
     },
-    "Google-keep_Dummy":{
-      image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/googlekeep.png",
-    name:"Google Keep clone",
+    IBM_AI_project: {
+      image:
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/movierecommender.png",
+      name: "Movie Recommendation system",
     },
-    "To-Do-List":{
-      image:"https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/todo.png",
-    name:"TO-DO List",
+    "Google-keep_Dummy": {
+      image:
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/googlekeep.png",
+      name: "Google Keep clone",
     },
-  }
+    "To-Do-List": {
+      image:
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/todo.png",
+      name: "TO-DO List",
+    },
+  },
 };
 export default config;
