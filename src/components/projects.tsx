@@ -15,6 +15,7 @@ export default async function projects() {
             <div
               data-aos="fade-right"
               data-aos-delay={50 + 100 * i}
+              data-aos-duration={800}
               key={i}
               className={`col-span-6 sm:col-span-1 `}
             >

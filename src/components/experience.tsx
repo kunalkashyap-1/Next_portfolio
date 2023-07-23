@@ -32,6 +32,7 @@ export default function Experience() {
             <div
               data-aos="fade-left"
               data-aos-delay="100"
+              data-aos-duration={800}
               className={styles.tabs_content}
             >
               <div>

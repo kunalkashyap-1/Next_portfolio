@@ -43,7 +43,12 @@ export default function Hero() {
   return (
     <div data-aos="fade" data-aos-delay="500" className="hero">
       {items.map((item, i) => (
-        <span data-aos="fade-up" data-aos-delay={500 + 100 * i} key={i}>
+        <span
+          data-aos="fade-up"
+          data-aos-delay={500 + 100 * i}
+          data-aos-duration={800}
+          key={i}
+        >
           {item}
         </span>
       ))}

@@ -13,6 +13,7 @@ export default function about() {
           className={`md:flex md:flex-row-reverse`}
           data-aos="fade-left"
           data-aos-delay="100"
+          data-aos-duration={800}
         >
           <div className="flex justify-center">
             <Float />
@@ -33,7 +34,7 @@ export default function about() {
           </div>
         </div>
         <div>
-          <p data-aos="fade-right" data-aos-delay="100">
+          <p data-aos="fade-right" data-aos-delay="100" data-aos-duration={800}>
             <span>Here are a few skills I’ve have acquired: </span>
           </p>
           <div className="flex flex-wrap gap-8">
@@ -54,7 +55,12 @@ export default function about() {
                 ))}
               </ul>
             </div>
-            <div data-aos="fade-right" data-aos-delay="200" className="card">
+            <div
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-duration={800}
+              className="card"
+            >
               <p
                 style={{
                   fontSize: "26px",

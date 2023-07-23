@@ -35,7 +35,12 @@ const Navbar: React.FC = () => {
       </div>
       <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         {config.navLinks.map(({ name, url }: NavLink, i: number) => (
-          <li data-aos="fade-down" data-aos-delay={`${50 * i}`} key={i}>
+          <li
+            data-aos="fade-down"
+            data-aos-delay={`${50 * i}`}
+            data-aos-duration={500}
+            key={i}
+          >
             <a href={url} onClick={toggleMenu}>
               {name}
             </a>
