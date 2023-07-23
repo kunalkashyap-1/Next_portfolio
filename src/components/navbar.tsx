@@ -21,6 +21,7 @@ const Navbar: React.FC = () => {
           height={50}
           style={{
             width: "50",
+            height:"auto",
           }}
         />
       </a>

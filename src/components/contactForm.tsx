@@ -1,11 +1,32 @@
 "use client";
 import Image from "next/image";
 import upRightArrow from "../icons/up-right-arrow.png";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import Toast from "./toast";
 
 export default function ContactForm() {
+  const form = useRef<HTMLFormElement>(null);
+  const [showToast, setShowToast] = useState(false);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add your form submission logic here
+    const serviceId = process.env.NEXT_PUBLIC_YOUR_SERVICE_ID!;
+    const templateId = process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID!;
+    const publicKey = process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY!;
+    // console.log(publicKey);
+
+
+    emailjs.sendForm(serviceId, templateId, form.current!, publicKey).then(
+      (result) => {
+        // console.log(result.text);
+        setShowToast(true);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+    form.current?.reset();
   };
 
   return (
@@ -14,7 +35,7 @@ export default function ContactForm() {
         Love to hear from you,
       </h1>
       <h1 className="contact-title">Get in touch 👋</h1>
-      <form onSubmit={handleSubmit}>
+      <form ref={form} onSubmit={handleSubmit}>
         <div className="contact_inputs">
           <div
             style={{
@@ -30,6 +51,7 @@ export default function ContactForm() {
             <input
               type="text"
               id="name"
+              name="user_name"
               className="full-width pretty-input"
               placeholder="Please enter your name"
               required
@@ -49,6 +71,7 @@ export default function ContactForm() {
             <input
               type="email"
               id="email"
+              name="user_email"
               className="full-width pretty-input"
               placeholder="Enter your Email"
               required
@@ -61,6 +84,7 @@ export default function ContactForm() {
           </label>
           <textarea
             id="message"
+            name="message"
             rows={5}
             className="full-width pretty-input"
             placeholder="Let me know your thoughts"
@@ -81,6 +105,10 @@ export default function ContactForm() {
           <Image src={upRightArrow} alt="up icon" width={17} height={10} />
         </button>
       </form>
+      <Toast
+        message="Message sent successfully! We'll get back to you soon."
+        showToast={showToast}
+      />
     </div>
   );
 }

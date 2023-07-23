@@ -320,3 +320,25 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+/* Styling for the toast container */
+.toast{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #4e9b50;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(100%); /* Start from the bottom and slide up */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+/* Styling for the show transition */
+.toast.show {
+  opacity: 1;
+  transform: translateY(0); /* Slide to the top position */
+}

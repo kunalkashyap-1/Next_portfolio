@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Float() {
   useEffect(() => {
-    const container = document.getElementById("container");
-    const inner = document.getElementById("inner");
+    const container = document.getElementById("container") as HTMLElement;
+    const inner = document.getElementById("inner") as HTMLElement;
 
     const mouse = {
       _x: 0,
@@ -26,7 +26,7 @@ export default function Float() {
       },
     };
 
-    mouse.setOrigin(container!);
+    mouse.setOrigin(container);
 
     let counter = 0;
     const updateRate = 10;
@@ -39,7 +39,7 @@ export default function Float() {
     };
 
     const onMouseLeaveHandler = function () {
-      inner!.style.transform = "";
+      inner.style.transform = "";
       //   inner!.style.webkitTransform = '';
       //   inner!.style.mozTransform = '';
       //   inner!.style.msTransform = '';
@@ -55,28 +55,28 @@ export default function Float() {
     const update = function (event: MouseEvent) {
       mouse.updatePosition(event);
       updateTransformStyle(
-        (mouse.y / (inner!.offsetHeight || 1) / 2).toFixed(2),
-        (mouse.x / (inner!.offsetWidth || 1) / 2).toFixed(2)
+        (mouse.y / inner.offsetHeight / 2).toFixed(2),
+        (mouse.x / inner.offsetWidth / 2).toFixed(2)
       );
     };
 
     const updateTransformStyle = function (x: string, y: string) {
       const style = `rotateX(${x}deg) rotateY(${y}deg)`;
-      inner!.style.transform = style;
+      inner.style.transform = style;
       //   inner!.style.webkitTransform = style;
       //   inner!.style.mozTransform = style;
       //   inner!.style.msTransform = style;
       //   inner!.style.oTransform = style;
     };
 
-    container!.addEventListener("mouseenter", onMouseEnterHandler);
-    container!.addEventListener("mouseleave", onMouseLeaveHandler);
-    container!.addEventListener("mousemove", onMouseMoveHandler);
+    container.addEventListener("mouseenter", onMouseEnterHandler);
+    container.addEventListener("mouseleave", onMouseLeaveHandler);
+    container.addEventListener("mousemove", onMouseMoveHandler);
 
     return () => {
-      container!.removeEventListener("mouseenter", onMouseEnterHandler);
-      container!.removeEventListener("mouseleave", onMouseLeaveHandler);
-      container!.removeEventListener("mousemove", onMouseMoveHandler);
+      container.removeEventListener("mouseenter", onMouseEnterHandler);
+      container.removeEventListener("mouseleave", onMouseLeaveHandler);
+      container.removeEventListener("mousemove", onMouseMoveHandler);
     };
   }, []);
   return (
@@ -84,12 +84,12 @@ export default function Float() {
       <div
         id="container"
         style={{
-          display:"inline-block",
+          display: "inline-block",
           perspective: "25px",
           margin: "2rem",
-          width: "24rem",
+          width: "22rem",
           minWidth: "16em",
-          height: "18rem",
+          height: "16rem",
         }}
       >
         <div
@@ -109,8 +109,9 @@ export default function Float() {
             width={300}
             height={300}
             style={{
-                width:"100%",
-                height:"100%",
+              width: "100%",
+              height: "100%",
+              minHeight: "16em",
             }}
           />
         </div>

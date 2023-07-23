@@ -4,16 +4,33 @@ import config from "../config";
 import {useEffect} from "react";
 import Image from "next/image";
 import rightArrow from "../icons/right-chevron.png";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Experience() {
+  const prefersReducedMotion = () => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+    return false;
+  };
     useEffect(()=>{
         const radioButton = document.getElementById(`exp0`) as HTMLInputElement;
         if(radioButton){
         radioButton.checked = true;
         }
+
+        AOS.init({
+          // Only enable AOS animations if prefers-reduced-motion is false
+          disable: prefersReducedMotion(),
+          once: true, // Animations will be triggered only once
+        });
     },[])
   return (
-    <div className="experience">
+    <div 
+    data-aos={prefersReducedMotion() ? undefined : 'fade-up'}
+    data-aos-duration="1000"
+    className="experience">
       <h1 id="experience" className="title-heading">Experience</h1>
       <div className={styles.tabs}>
         {config.experiences.map((items, i: number) => (
@@ -27,7 +44,10 @@ export default function Experience() {
             <label htmlFor={`exp${i}`} className={styles.tabs_label}>
               {items.companyName}
             </label>
-            <div className={styles.tabs_content}>
+            <div 
+            data-aos={prefersReducedMotion() ? undefined : 'fade-left'}
+            data-aos-delay="100"
+            className={styles.tabs_content}>
               <div>
                   <h2 className={styles.tabs_title}> {items.companyName}</h2>
                 <span className="flex justify-between pr-4">
