@@ -105,7 +105,7 @@ export default function ContactForm() {
         </button>
       </form>
       <Toast
-        message="Message sent successfully! We'll get back to you soon."
+        message="Message sent successfully! I'll get back to you soon."
         showToast={showToast}
       />
     </div>
