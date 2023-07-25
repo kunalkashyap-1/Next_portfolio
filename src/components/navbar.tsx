@@ -47,7 +47,12 @@ const Navbar: React.FC = () => {
           </li>
         ))}
         <li data-aos="fade-down" data-aos-delay={`250`}>
-          <a href="/resume" target="_blank">
+          <a
+            className="resume-button"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Resume
           </a>
         </li>
