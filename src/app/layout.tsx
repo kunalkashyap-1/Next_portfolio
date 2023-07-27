@@ -7,7 +7,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Kunal Kashyap",
   description: `Welcome to kunal kashyap's Portfolio - Aspiring Web Developer"
-
   Embark on a journey through the captivating world of web development with me. Explore a diverse range of projects that showcase my creativity and dedication to mastering the art of web development. `,
 };
 

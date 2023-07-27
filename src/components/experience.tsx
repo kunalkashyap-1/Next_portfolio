@@ -1,7 +1,7 @@
 "use client";
 import styles from "../../styles/experience.module.css";
 import config from "../config";
-import { useEffect } from "react";
+import React,{ useEffect } from "react";
 import Image from "next/image";
 import rightArrow from "../icons/right-chevron.png";
 
@@ -19,12 +19,13 @@ export default function Experience() {
       </h1>
       <div className={styles.tabs}>
         {config.experiences.map((items, i: number) => (
-          <>
+          <React.Fragment key={i}>
             <input
               type="radio"
               className={styles.tabs_radio}
               name="experience"
               id={`exp${i}`}
+              key={i}
             />
             <label htmlFor={`exp${i}`} className={styles.tabs_label}>
               {items.companyName}
@@ -59,7 +60,7 @@ export default function Experience() {
                 ))}
               </div>
             </div>
-          </>
+          </React.Fragment>
         ))}
       </div>
     </div>
