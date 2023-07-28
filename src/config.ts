@@ -93,32 +93,32 @@ const config: Config = {
   images: {
     Encypher_chat_app: {
       image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/encypher.png",
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/encypher.png",
       name: "Encypher Chat App",
     },
     News_NextJS: {
       image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/primeglobal.png",
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/primeglobal.png",
       name: "Prime Global News Site",
     },
     feedParsify_doc: {
       image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/feedparsify.png",
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/feedparsify.png",
       name: "Feed parsify scraper",
     },
     IBM_AI_project: {
       image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/movierecommender.png",
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/movierecommender.png",
       name: "Movie Recommendation system",
     },
     "Google-keep_Dummy": {
       image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/googlekeep.png",
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/googlekeep.png",
       name: "Google Keep clone",
     },
     "To-Do-List": {
       image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/static/images/todo.png",
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/todo.png",
       name: "TO-DO List",
     },
   },
