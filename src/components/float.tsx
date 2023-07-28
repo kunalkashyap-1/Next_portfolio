@@ -107,8 +107,8 @@ export default function Float() {
           <Image
             src="https://raw.githubusercontent.com/kunalkashyap-1/kunalkashyap-1/master/assets/giphy.webp"
             alt="profile pic"
-            width={500}
-            height={150}
+            width={353}
+            height={200}
             // layout="responsive"
           />
         </div>

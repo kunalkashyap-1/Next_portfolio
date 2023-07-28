@@ -1,9 +1,26 @@
-import { getRepos } from "../api";
+"use client";
+import axios from "axios";
 import ProjectsModal from "./projectModal";
 import { Response } from "../../models/configModel";
+import { useState, useEffect } from "react";
 
-export default async function projects() {
-  const projects: Response[] = await getRepos();
+export default function Projects() {
+  const [repos, setRepos] = useState<Response[]>([]);
+
+  useEffect(() => {
+    axios
+      .get<Response[]>(
+        "https://gh-pinned-repos.egoist.dev/?username=kunalkashyap-1"
+      )
+      .then((response) => {
+        setRepos(response.data);
+      })
+      .catch((error: any) => {
+        console.error("ERROR: ", error.message);
+        // Handle error if needed
+      });
+  }, []);
+
   return (
     <div data-aos="fade-up">
       <h1 className="title-heading" id="projects">
@@ -11,7 +28,7 @@ export default async function projects() {
       </h1>
       <div className="container mx-auto">
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 my-5">
-          {projects.map((item: Response, i: number) => (
+          {repos.map((item: Response, i: number) => (
             <div
               data-aos="fade-right"
               data-aos-delay={50 + 100 * i}
