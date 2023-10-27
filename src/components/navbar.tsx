@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
             data-aos-duration={500}
             key={i}
           >
-            <a href={url} onClick={toggleMenu}>
+            <a href={url} onClick={toggleMenu} className="w-full text-center">
               {name}
             </a>
           </li>

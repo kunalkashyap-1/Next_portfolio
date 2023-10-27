@@ -71,6 +71,15 @@ const config: Config = {
   },
   experiences: [
     {
+      companyName: "AVY CONSULTING",
+      timeDuration: "July'23-Sep'23",
+      position: "Full Stack Developer Intern",
+      description: [
+        "Actively engaged in full-stack web development tasks and projects, including website development.",
+        "Demonstrated strong problem-solving skills and ownership of code.",
+      ],
+    },
+    {
       companyName: "IBM",
       timeDuration: "Aug'22-Sep'22",
       position: "Trainee",
