@@ -105,6 +105,11 @@ const config: Config = {
         "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/encypher.png",
       name: "Encypher Chat App",
     },
+    "Auth_JWT_MERN": {
+      image:
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/AuthJWT.png",
+      name: "JWT Authentication API",
+    },
     News_NextJS: {
       image:
         "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/primeglobal.png",
@@ -124,11 +129,6 @@ const config: Config = {
       image:
         "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/googlekeep.png",
       name: "Google Keep clone",
-    },
-    "To-Do-List": {
-      image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/todo.png",
-      name: "TO-DO List",
     },
   },
 };
