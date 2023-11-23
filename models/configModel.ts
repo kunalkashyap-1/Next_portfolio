@@ -34,14 +34,18 @@ export interface Config {
   };
 }
 
-export interface Response {
-  forks: number;
-  image: string;
-  language: string;
-  languageColor: string;
-  link: string;
-  owner: string;
-  repo: string;
-  stars: number;
-  website: string;
+interface Language {
+  name: string;
 }
+
+export interface Response {
+  name: string;
+  url: string;
+  description: string;
+  languages: {
+    nodes: Language[];
+  };
+  stargazerCount: number;
+  forkCount: number;
+}
+
