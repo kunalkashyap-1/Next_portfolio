@@ -16,7 +16,7 @@ export default function ProjectsModal({ id, data }: inputProps) {
     >
       <div className={`w-full md:w-1/3 ${id % 2 == 0 ? "md:order-last" : ""}`}>
         <Image
-          className="object-fill w-full h-full"
+          className="object-contain w-full h-full"
           src={config.images[data.name].image}
           alt="Image Description"
           width={500}
