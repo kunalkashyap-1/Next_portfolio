@@ -1,7 +1,7 @@
 export default function Hero() {
   const one = (
     <h1 className="big-heading">
-      Hi, {`I'm`} <strong>Kunal Kashyap, </strong>
+      Hi, {`I'm`} <strong>Kunal Kashyap </strong>
     </h1>
   );
   const two = <h2></h2>;

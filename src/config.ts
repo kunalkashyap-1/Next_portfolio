@@ -71,6 +71,15 @@ const config: Config = {
   },
   experiences: [
     {
+      companyName: "STACKIOT TECHNOLOGIES",
+      timeDuration: "Jan'15-present",
+      position: "Software Developer Intern",
+      description: [
+        "As a Software Developer Intern at Stack IOT, I am actively engaged in refining our projects for optimal performance. Leveraging my expertise in MERN stack, I contribute to the development of innovative solutions for the Internet of Things. ",
+        "My responsibilities involve enhancing system functionality, implementing robust features, and collaborating with the team to drive technological advancements in the realm of IoT.",
+      ],
+    },
+    {
       companyName: "AVY CONSULTING",
       timeDuration: "July'23-Sep'23",
       position: "Full Stack Developer Intern",
@@ -88,15 +97,6 @@ const config: Config = {
         "Demonstrated my expertise in AI and Deep Learning by implementing the KNN algorithm to develop a Movie Recommendation System. This project showcases my practical application of machine learning techniques.",
       ],
     },
-    {
-      companyName: "Tech Mahindra Foundation",
-      timeDuration: "May'20-july'20",
-      position: "Intern",
-      description: [
-        "Worked as system admin intern. managed and setup the linux system for the workplace.",
-        "hands on Chef and Ansible to deploy the system and packages.",
-      ],
-    },
   ],
 
   images: {
@@ -105,15 +105,15 @@ const config: Config = {
         "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/encypher.png",
       name: "Encypher Chat App",
     },
-    "Auth_JWT_MERN": {
+    Auth_JWT_MERN: {
       image:
         "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/AuthJWT.png",
       name: "JWT Authentication API",
     },
-    News_NextJS: {
+    vaartalap: {
       image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/primeglobal.png",
-      name: "Prime Global News Site",
+        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/vaartalap.png",
+      name: "Vaartalap: AI Powered Video Conferencing App",
     },
     feedParsify_doc: {
       image:

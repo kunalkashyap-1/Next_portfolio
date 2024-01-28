@@ -59,7 +59,7 @@ export default function Projects() {
 
   return (
     <section
-      className="my-4 mx-6"
+      className="my-4 mx-14"
       data-aos="fade-up"
     >
       <h1 className="title-heading" id="projects">
