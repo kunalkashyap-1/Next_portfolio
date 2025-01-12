@@ -1,6 +1,5 @@
 "use client";
-import config from "../config";
-import { NavLink } from "../../models/configModel";
+import config from "@/config";
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -12,15 +11,15 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav data-aos="fade" className="navbar">
+    <nav className="navbar">
       <a href="/" className="logo">
         <Image
           src="https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/logo.png"
           alt="logo"
-          width={50}
-          height={50}
+          width={70}
+          height={70}
           style={{
-            width: "50",
+            width: "70",
             height: "auto",
           }}
         />
@@ -34,11 +33,8 @@ const Navbar: React.FC = () => {
         <div className="bar"></div>
       </div>
       <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
-        {config.navLinks.map(({ name, url }: NavLink, i: number) => (
+        {config.navLinks.map(({ name, url }, i: number) => (
           <li
-            data-aos="fade-down"
-            data-aos-delay={`${50 * i}`}
-            data-aos-duration={500}
             key={i}
           >
             <a href={url} onClick={toggleMenu} className="w-full text-center">
@@ -46,16 +42,6 @@ const Navbar: React.FC = () => {
             </a>
           </li>
         ))}
-        <li data-aos="fade-down" data-aos-delay={`250`}>
-          <a
-            className="resume-button"
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
-        </li>
       </ul>
     </nav>
   );

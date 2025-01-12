@@ -1,35 +1,5 @@
-import { Config } from "../models/configModel";
-
-const config: Config = {
+const config = {
   email: "kunal.kashyap.8775@gmail.com",
-
-  socialMedia: [
-    {
-      image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/github.png",
-      url: "https://github.com/kunalkashyap-1",
-    },
-    {
-      image:
-        "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/instagram.png?raw=true",
-      url: "https://www.instagram.com/encrypted_kunal/",
-    },
-    {
-      image:
-        "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/twitter.png?raw=true",
-      url: "https://twitter.com/kunal_code",
-    },
-    {
-      image:
-        "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/linkedin.png?raw=true",
-      url: "https://www.linkedin.com/in/kunal-kashyap-a0798222b/",
-    },
-    {
-      image:
-        "https://github.com/kunalkashyap-1/Next_portfolio/blob/master/src/icons/link.png?raw=true",
-      url: "",
-    },
-  ],
 
   navLinks: [
     {
@@ -59,6 +29,7 @@ const config: Config = {
       "Express JS",
       "React JS",
       "Next JS",
+      "Electron",
     ],
     tools: [
       "Git-Github",

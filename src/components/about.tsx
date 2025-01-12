@@ -1,22 +1,17 @@
-"use client";
-import Float from "./float";
 import config from "../config";
 
-export default function about() {
+export default function About() {
   return (
-    <div data-aos="fade-up" className="about">
+    <div className="about">
       <h1 id="about" className="title-heading">
         About Me
       </h1>
       <div>
         <div
           className={`md:flex md:flex-row-reverse`}
-          data-aos="fade-left"
-          data-aos-delay="100"
-          data-aos-duration={800}
         >
           <div className="flex justify-center">
-            <Float />
+            Image here
           </div>
           <div>
             <p>
@@ -34,11 +29,11 @@ export default function about() {
           </div>
         </div>
         <div>
-          <p data-aos="fade-right" data-aos-delay="100" data-aos-duration={800}>
+          <p>
             <span>Here are a few skills I’ve have acquired: </span>
           </p>
           <div className="flex flex-wrap gap-8">
-            <div data-aos="fade-right" data-aos-delay="150" className="card">
+            <div className="card">
               <p
                 style={{
                   fontSize: "26px",
@@ -56,9 +51,6 @@ export default function about() {
               </ul>
             </div>
             <div
-              data-aos="fade-right"
-              data-aos-delay="200"
-              data-aos-duration={800}
               className="card"
             >
               <p

@@ -1,3 +1,7 @@
+import { GoDownload, GoMail } from "react-icons/go";
+import { RiLinkedinLine, RiGithubLine } from "react-icons/ri";
+import HeroCard from "./hero_card";
+
 export default function Hero() {
   const one = (
     <h1 className="big-heading">
@@ -12,7 +16,7 @@ export default function Hero() {
         color: "#3BCAC9",
       }}
     >
-      Building and developing full stack web solutions.
+      Full Stack Developer
     </h3>
   );
   const four = (
@@ -23,35 +27,57 @@ export default function Hero() {
         fontSize: "18px",
       }}
     >
-      As a full stack web developer, my expertise lies in developing dynamic and
-      interactive web applications. I possess a solid understanding of both
-      front-end and back-end technologies, and I am dedicated to constructing
-      effective and intuitive solutions.
+      I am skilled in creating dynamic, interactive
+      web applications with expertise in both front-end and back-end technologies,
+      dedicated to delivering intuitive solutions.
     </p>
   );
   const five = (
-    <a
-      className="linked_button"
-      target="_blank"
-      href="https://www.linkedin.com/in/kunal-kashyap-a0798222b/"
-    >
-      {`Let's`} talk
-    </a>
+    <div className="flex gap-7 mt-4 justify-center items-center">
+  <a
+    target="_blank"
+    className="text-3xl text-gray-400 hover:text-green-300 hover:scale-110 transition-transform duration-300"
+    href="https://www.linkedin.com/in/kunal-kashyap-a0798222b/"
+  >
+    <RiLinkedinLine />
+  </a>
+  <a
+    target="_blank"
+    className="text-3xl text-gray-400 hover:text-green-300 hover:scale-110 transition-transform duration-300"
+    href="https://github.com/kunalkashyap-1"
+  >
+    <RiGithubLine />
+  </a>
+  <a
+    href="mailto:kunal.kashyap.8775.com"
+    className="text-3xl text-gray-400 hover:text-green-300 hover:scale-110 transition-transform duration-300"
+  >
+    <GoMail />
+  </a>
+  <a
+    href="./resume.pdf"
+    download
+    className="flex items-center justify-center gap-2 px-6 py-3
+               text-black font-semibold bg-green-400 rounded-full shadow-lg 
+               hover:bg-green-500 hover:gap-3 hover:scale-105 
+               transition-all duration-300 ease-in-out"
+  >
+    Resume
+    <GoDownload className="text-2xl" />
+  </a>
+</div>
+
   );
 
   const items = [one, two, three, four, five];
   return (
-    <div data-aos="fade" data-aos-delay="500" className="hero">
+    <section className="flex items-start justify-center h-[100dvh]">
+      <div className="hero">
       {items.map((item, i) => (
-        <span
-          data-aos="fade-up"
-          data-aos-delay={500 + 100 * i}
-          data-aos-duration={800}
-          key={i}
-        >
-          {item}
-        </span>
+        <span key={i}>{item}</span>
       ))}
-    </div>
+      </div>
+      <HeroCard/>
+    </section>
   );
 }

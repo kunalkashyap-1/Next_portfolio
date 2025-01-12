@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
   --main-green: #79dd09;
@@ -45,13 +45,13 @@ body {
 
 .big-heading {
   margin: 0;
-  font-size: clamp(40px, 8vw, 80px);
+  font-size: clamp(40px, 8vw, 60px);
   color: #cdd6f7;
 }
 
 .medium-heading {
   margin: 0;
-  font-size: clamp(40px, 8vw, 45px);
+  font-size: clamp(40px, 8vw, 30px);
 }
 
 .contact-title {
@@ -146,7 +146,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 90px;
+  padding: 1.5rem 3rem;
 }
 
 .navbar-brand {
@@ -176,7 +176,7 @@ body {
 }
 
 .navbar li:hover {
-  background-color: #555;
+  background-color: rgb(51, 211, 158);
 }
 
 .navbar li a {
@@ -261,13 +261,19 @@ body {
 
 /*section related code*/
 
-.section {
-  margin: 2rem 8rem;
+main {
+  /* margin: 2rem 8rem; */
+  min-height: 100dvh;
+  height: 100dvh;
+}
+
+canvas{
+  height: 100dvh !important;
 }
 
 @media screen and (max-width: 888px) {
   .section {
-    margin: 1rem 4rem;
+    /* margin: 1rem 4rem; */
   }
 }
 
@@ -275,8 +281,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 100vh;
-  height: 100vh;
+  padding: 1rem 5rem;
 }
 
 .hero h1 {
@@ -301,8 +306,8 @@ body {
 }
 
 .about {
-  max-width: 60rem;
-  /* max-height:100vh; */
+  background-color: #0a192f;
+  padding: 5rem 10rem;
   margin: auto;
 }
 
@@ -356,4 +361,17 @@ body {
 .toast.show {
   opacity: 1;
   transform: translateY(0); /* Slide to the top position */
+}
+
+.vanta-background {
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.blur-background {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
 }
