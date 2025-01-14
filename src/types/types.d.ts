@@ -1,44 +1,44 @@
-  export interface NavLink {
-    name: string;
-    url: string;
-  }
-  
-  export interface Skills {
-    dev: String[];
-    tools: String[];
-  }
-  
-  export interface Experiences {
-    companyName: string;
-    timeDuration: string;
-    position: string;
-    description: string[];
-  }
-  
-  export interface Config {
-    email: string;
-    navLinks: NavLink[];
-    skills: Skills;
-    experiences: Experiences[];
-    images: {
-      [repo_name: string]: {
-        image: string;
-        name: string;
-      };
+export interface NavLink {
+  name: String;
+  url: String;
+}
+
+export interface Skills {
+  dev: String[];
+  tools: String[];
+}
+
+export interface Experiences {
+  companyName: String;
+  timeDuration: String;
+  position: String;
+  description: String[];
+}
+
+export interface Config {
+  email: String;
+  navLinks: NavLink[];
+  skills: Skills;
+  experiences: Experiences[];
+  images: {
+    [repo_name: String]: {
+      image: String;
+      name: String;
     };
-  }
-  
-  interface Language {
-    name: string;
-  }
-  
-  export interface Response {
-    name: string;
-    url: string;
-    description: string;
-    languages: {
-      nodes: Language[];
-    };
-    stargazerCount: number;
-    forkCount: number;
-  }
+  };
+}
+
+interface Language {
+  name: String;
+}
+
+export interface Response {
+  name: String;
+  url: String;
+  description: String;
+  languages: {
+    nodes: Language[];
+  };
+  stargazerCount: Number;
+  forkCount: Number;
+}

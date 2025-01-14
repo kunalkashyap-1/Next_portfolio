@@ -318,9 +318,7 @@ canvas{
 }
 
 .experience {
-  max-width: 45rem;
-  min-height: 30rem;
-  margin: auto;
+  background-color: #0a192f;
 }
 
 .experience p,

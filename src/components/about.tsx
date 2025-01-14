@@ -1,77 +1,78 @@
-import config from "../config";
+import React from "react";
+import { Parallax } from "react-scroll-parallax";
+import { motion } from "framer-motion";
+import config from "@/config";
+import TechStack from "./skillCard";
 
-export default function About() {
+const About = () => {
   return (
-    <div className="about">
-      <h1 id="about" className="title-heading">
-        About Me
-      </h1>
-      <div>
-        <div
-          className={`md:flex md:flex-row-reverse`}
+    <div className="about relative min-h-screen">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent pointer-events-none" />
+
+      <Parallax speed={-10}>
+        <motion.h1
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          id="about"
+          className="title-heading text-center py-16"
         >
-          <div className="flex justify-center">
-            Image here
-          </div>
-          <div>
-            <p>
-              {`Hello, I'm Kunal Kashyap, a highly skilled Full Stack Developer proficient in 
-            the MERN stack. My focus is on building resilient and scalable web applications, 
-            harnessing the potential of MongoDB, Express.js, React, and Node.js to achieve 
-            seamless user interactions.`}
-            </p>
-            <p>
-              {` With a strong foundation in front-end and back-end 
-            development, I aim to develop intuitive and efficient solutions that breathe life 
-            into ideas. Committed to continuous growth and keeping up with emerging 
-            technologies.`}
-            </p>
-          </div>
-        </div>
-        <div>
-          <p>
-            <span>Here are a few skills I’ve have acquired: </span>
-          </p>
-          <div className="flex flex-wrap gap-8">
-            <div className="card">
-              <p
-                style={{
-                  fontSize: "26px",
-                  fontWeight: "bold",
-                  margin: "0",
-                  paddingBottom: "10px",
-                }}
-              >
-                Dev
-              </p>
-              <ul>
-                {config.skills.dev.map((skill, i: number) => (
-                  <li key={i}>{skill}</li>
-                ))}
-              </ul>
-            </div>
-            <div
-              className="card"
+          About Me
+        </motion.h1>
+      </Parallax>
+
+      <div className="container mx-auto p-4">
+        <div className="md:flex md:flex-row-reverse md:items-center md:gap-12">
+          <Parallax speed={15} className="flex-1">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex justify-center p-8"
             >
-              <p
-                style={{
-                  fontSize: "26px",
-                  fontWeight: "bold",
-                  margin: "0",
-                  paddingBottom: "10px",
-                }}
-              >
-                Tools
+              <div className="w-64 h-64 bg-gray-300 rounded-full flex items-center justify-center">
+                Image here
+              </div>
+            </motion.div>
+          </Parallax>
+
+          <Parallax speed={5} className="flex-1">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="mb-4 text-lg">
+                {`Hello, I'm Kunal Kashyap, a highly skilled Full Stack Developer proficient in 
+                the MERN stack. My focus is on building resilient and scalable web applications, 
+                harnessing the potential of MongoDB, Express.js, React, and Node.js to achieve 
+                seamless user interactions.`}
               </p>
-              <ul>
-                {config.skills.tools.map((skill, i: number) => (
-                  <li key={i}>{skill}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+              <p className="text-lg">
+                {`With a strong foundation in front-end and back-end 
+                development, I aim to develop intuitive and efficient solutions that breathe life 
+                into ideas. Committed to continuous growth and keeping up with emerging 
+                technologies.`}
+              </p>
+            </motion.div>
+          </Parallax>
         </div>
+        <Parallax speed={5} className="flex-1">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay:0.2 }}
+          >
+            <TechStack />
+          </motion.div>
+        </Parallax>
       </div>
     </div>
   );
-}
+};
+
+export default About;

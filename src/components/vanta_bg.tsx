@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-//@ts-ignore
+//@ts-expect-error
 import NET from "vanta/dist/vanta.net.min";
 import * as THREE from "three";
 
@@ -12,7 +12,7 @@ interface BlurredVantaBackgroundProps {
 
 export default function BlurredVantaBackground({
   children,
-  blurStrength = 1,
+  blurStrength = 5,
   className = "",
 }: BlurredVantaBackgroundProps) {
   const [vantaEffect, setVantaEffect] = useState<any>(null);
