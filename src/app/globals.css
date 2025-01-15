@@ -321,16 +321,17 @@ canvas{
   background-color: #0a192f;
 }
 
+.projects {
+  background-color: #0a192f;
+}
+
 .experience p,
 .contact label {
   font-size: 18px;
 }
 
 .contact {
-  max-width: 50rem;
-  margin: auto;
-  margin-top: 8rem;
-  min-height: 85vh;
+  background-color: #0a192f;
 }
 
 .contact_inputs {

@@ -46,8 +46,9 @@ const About = () => {
               transition={{ duration: 0.8 }}
             >
               <p className="mb-4 text-lg">
-                {`Hello, I'm Kunal Kashyap, a highly skilled Full Stack Developer proficient in 
-                the MERN stack. My focus is on building resilient and scalable web applications, 
+                {`Hello, I'm Kunal Kashyap, a Full Stack Developer proficient in 
+                the MERN stack, I turn caffeine into beautiful Web Applications. 
+                My focus is on building resilient and scalable products, 
                 harnessing the potential of MongoDB, Express.js, React, and Node.js to achieve 
                 seamless user interactions.`}
               </p>

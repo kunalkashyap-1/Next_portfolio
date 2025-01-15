@@ -35,6 +35,7 @@ interface Language {
 export interface Response {
   name: String;
   url: String;
+  homepageUrl:String;
   description: String;
   languages: {
     nodes: Language[];

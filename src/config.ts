@@ -212,7 +212,7 @@ const config = {
     vaartalap: {
       image:
         "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/vaartalap.png",
-      name: "Vaartalap: AI Powered Video Conferencing App",
+      name: "Vaartalap: AI Video Conferencing App",
     },
     feedParsify_doc: {
       image:
