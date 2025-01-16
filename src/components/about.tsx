@@ -1,15 +1,14 @@
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
-import config from "@/config";
 import TechStack from "./skillCard";
 
 const About = () => {
   return (
-    <div className="about relative min-h-screen">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent pointer-events-none" />
+    <div className="about min-h-screen">
+      <div className=" bg-gradient-to-b from-black/10 to-transparent pointer-events-none" />
 
-      <Parallax speed={-10}>
+      <Parallax speed={-8}>
         <motion.h1
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-//@ts-expect-error
+//@ts-expect-error becuase it's js library
 import NET from "vanta/dist/vanta.net.min";
 import * as THREE from "three";
 
@@ -15,7 +15,7 @@ export default function BlurredVantaBackground({
   blurStrength = 5,
   className = "",
 }: BlurredVantaBackgroundProps) {
-  const [vantaEffect, setVantaEffect] = useState<any>(null);
+  const [vantaEffect, setVantaEffect] = useState<unknown>(null);
   const vantaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -40,6 +40,7 @@ export default function BlurredVantaBackground({
     }
 
     return () => {
+      //@ts-expect-error because of the unkown type
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);

@@ -12,16 +12,18 @@ import VantaBackground from "@/components/vanta_bg";
 export default function Home() {
   return (
     <main>
-      <VantaBackground>
-        <ParallaxWrapper>
-          <Navbar />
-          <Hero />
-          <About />
-          <Experience />
-          <Projects />
-          <ContactForm/>
-        </ParallaxWrapper>
-      </VantaBackground>
+      <ParallaxWrapper>
+        <VantaBackground>
+            <Navbar />
+            <Hero />
+        </VantaBackground>
+        <div className="relative z-30 flex flex-col ">
+        <About />
+        <Experience />
+        <Projects />
+        <ContactForm />
+        </div>
+      </ParallaxWrapper>
     </main>
   );
 }

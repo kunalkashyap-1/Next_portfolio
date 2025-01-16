@@ -4,12 +4,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight, Calendar, Briefcase } from "lucide-react";
+import { ChevronRight, Calendar } from "lucide-react";
 import config from "@/config";
 import { Parallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
@@ -18,8 +17,8 @@ export default function Experience() {
   const [activeTab, setActiveTab] = useState(config.experiences[0].companyName);
 
   return (
-    <div className="experience relative min-h-screen">
-      <div className="absolute inset-0 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div className="experience min-h-screen">
+      <div className="px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Parallax speed={-5}>
           <motion.h1
             initial={{ opacity: 0 }}

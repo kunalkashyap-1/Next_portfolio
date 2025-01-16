@@ -1,15 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import config from "@/config";
-import Image from "next/image";
 import { useState } from "react";
-
-interface Technology {
-  name: string;
-  experience: string;
-  icon: string;
-  category: string;
-}
 
 const categories = ["Frontend", "Backend", "Tools","Framework"];
 
@@ -26,7 +18,7 @@ export default function TechStack() {
     >
       <div className=" w-full space-y-6">
         <h2 className="text-2xl font-semibold text-green-300">
-          Here are a few skills I've acquired:
+          Here are a few skills I&apos;ve acquired:
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6">
           <div className="space-y-2">

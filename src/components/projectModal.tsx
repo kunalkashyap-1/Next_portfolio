@@ -26,14 +26,13 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
   return (
     <Dialog>
       <DialogTrigger className="w-full">
-        <Card className="w-full h-[25rem] bg-slate-800 flex flex-col justify-between hover:shadow-lg rounded-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+        <Card key={id} className="w-full h-[25rem] bg-slate-800 z-10 flex flex-col justify-between hover:shadow-lg rounded-xl transition-all duration-300 hover:scale-[1.01]  cursor-pointer">
           <div className="w-full h-[15rem] overflow-hidden rounded-t-xl">
             {projectImage?.image ? (
               <Image
                 src={projectImage.image}
                 alt={projectImage.name}
-                objectFit="cover"
-                className="rounded-t-xl"
+                className="rounded-t-xl object-cover"
                 width={500}
                 height={300}
               />
@@ -120,9 +119,9 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
             <Image
               src={projectImage.image}
               alt={projectImage.name}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
+              width={3000}
+              height={3000}
+              className="rounded-lg object-cover"
             />
           ) : (
             <div className="flex items-center justify-center h-full text-gray-500">

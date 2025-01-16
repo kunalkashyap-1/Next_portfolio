@@ -1,45 +1,45 @@
 export interface NavLink {
-  name: String;
-  url: String;
+  name: string;
+  url: string;
 }
 
 export interface Skills {
-  dev: String[];
-  tools: String[];
+  dev: string[];
+  tools: string[];
 }
 
 export interface Experiences {
-  companyName: String;
-  timeDuration: String;
-  position: String;
-  description: String[];
+  companyName: string;
+  timeDuration: string;
+  position: string;
+  description: string[];
 }
 
 export interface Config {
-  email: String;
+  email: string;
   navLinks: NavLink[];
   skills: Skills;
   experiences: Experiences[];
   images: {
-    [repo_name: String]: {
-      image: String;
-      name: String;
+    [repo_name: string]: {
+      image: string;
+      name: string;
     };
   };
 }
 
 interface Language {
-  name: String;
+  name: string;
 }
 
 export interface Response {
-  name: String;
-  url: String;
-  homepageUrl:String;
-  description: String;
+  name: string;
+  url: string;
+  homepageUrl:string;
+  description: string;
   languages: {
     nodes: Language[];
   };
-  stargazerCount: Number;
-  forkCount: Number;
+  stargazerCount: number;
+  forkCount: number;
 }

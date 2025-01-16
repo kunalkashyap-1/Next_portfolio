@@ -3,6 +3,7 @@ import config from "@/config";
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ const Navbar: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
     >
-      <a href="/" className="logo">
+      <Link href="/" className="logo">
         <Image
           src="https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/logo.png"
           alt="logo"
@@ -26,7 +27,7 @@ const Navbar: React.FC = () => {
           height={70}
           style={{ width: "70", height: "auto" }}
         />
-      </a>
+      </Link>
 
       <div
         className={`menu-icon ${isMenuOpen ? "open" : ""}`}
