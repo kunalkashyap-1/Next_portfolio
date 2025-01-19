@@ -60,7 +60,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <p>
+              <p className="text-justify">
                 A Full Stack Developer who turns caffeine into code, with
                 expertise in the{" "}
                 <span className="text-emerald-300">MERN stack</span>. I&apos;m
@@ -73,7 +73,7 @@ const About = () => {
                 <span className="text-emerald-300">Node.js</span> to deliver
                 seamless and intuitive user experiences.
               </p>
-              <p>
+              <p className="text-justify">
                 With a robust foundation in both front-end and back-end
                 development, my mission is to transform ideas into innovative,
                 scalable, and user-centric products. Committed to continuous

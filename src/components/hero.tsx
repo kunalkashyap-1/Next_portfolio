@@ -32,7 +32,7 @@ export default function Hero() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
-      className="max-w-xl text-lg text-gray-400"
+      className="max-w-xl text-lg text-gray-400 text-justify"
     >
       I specialize in developing interactive online apps using both front-end
       and back-end technologies. I prioritize providing user-friendly solutions.

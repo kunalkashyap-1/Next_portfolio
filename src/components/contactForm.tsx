@@ -35,12 +35,17 @@ export default function ContactForm() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           {/* <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold" id="contact">
             Let&apos;s connect
           </h1> */}
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Let&apos;s connect👋</h1>
+          <h1
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold"
+            id="contact"
+          >
+            Let&apos;s connect👋
+          </h1>
         </motion.div>
       </Parallax>
       <Parallax speed={5}>
@@ -53,7 +58,10 @@ export default function ContactForm() {
             className="flex flex-col sm:flex-row sm:gap-8 gap-4"
           >
             <div className="flex-1">
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-300"
+              >
                 Your name
               </label>
               <input
@@ -66,7 +74,10 @@ export default function ContactForm() {
               />
             </div>
             <div className="flex-1">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-300"
+              >
                 Your email
               </label>
               <input
@@ -86,7 +97,10 @@ export default function ContactForm() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-6"
           >
-            <label htmlFor="message" className="block text-sm font-medium text-gray-300">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-300"
+            >
               Message
             </label>
             <textarea
