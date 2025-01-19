@@ -32,11 +32,10 @@ export default function Hero() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
-      className="max-w-xl text-lg"
+      className="max-w-xl text-lg text-gray-400"
     >
-      I am skilled in creating dynamic, interactive web applications with
-      expertise in both front-end and back-end technologies, dedicated to
-      delivering intuitive solutions.
+      I specialize in developing interactive online apps using both front-end
+      and back-end technologies. I prioritize providing user-friendly solutions.
     </motion.p>
   );
   const five = (
@@ -67,7 +66,7 @@ export default function Hero() {
         <GoMail />
       </a>
       <a
-        href="./resume.pdf"
+        href="/resume.pdf"
         download
         className="flex items-center justify-center gap-2 px-6 py-3
                    text-gray-100 font-semibold bg-green-400 rounded-full shadow-lg 
@@ -83,14 +82,10 @@ export default function Hero() {
   const items = [one, two, three, four, five];
   return (
     <section className="flex items-start justify-center h-[100dvh]">
-      <Parallax
-        speed={-5}
-        className="absolute w-full"
-        translateY={[0, 15]}
-      >
+      <Parallax speed={-5} className="absolute w-full" translateY={[0, 15]}>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10" />
       </Parallax>
-      <div className="hero">
+      <div className="hero sm:py-6 px-12 py-2">
         {items.map((item, i) => (
           <Parallax key={i} translateY={[0, 5 + i * 2]} speed={0}>
             <span>{item}</span>
@@ -101,6 +96,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
+        className="hidden lg:block"
       >
         <HeroCard />
       </motion.div>

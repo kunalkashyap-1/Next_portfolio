@@ -48,7 +48,6 @@ export default function Projects() {
         `;
 
         const result = await client.query({ query });
-
         setRepos(result.data.user.pinnedItems.nodes);
         setIsLoading(false);
       } catch (error) {
@@ -62,7 +61,7 @@ export default function Projects() {
 
   return (
     <div className="projects min-h-screen w-full py-16 px-4 md:px-8 lg:px-24">
-      <Parallax speed={-5}>
+      <Parallax speed={-2}>
         <motion.h1
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -71,8 +70,8 @@ export default function Projects() {
           className="title-heading text-center text-4xl md:text-5xl font-bold"
           id="projects"
         >
-          Projects
-        </motion.h1>
+        Projects
+      </motion.h1>
       </Parallax>
 
       <div className="container mx-auto">
@@ -81,57 +80,54 @@ export default function Projects() {
             <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-white-900"></div>
           </div>
         ) : (
-          <Parallax speed={5}>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5"
-            >
-              {repos.map((item: Response, idx: number) => (
-                <Parallax
-                  key={String(item.url)}
-                  speed={2}
-                  translateY={[0, 15]}
-                  className="relative group block p-2 h-full w-full"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5"
+          >
+            {repos.map((item: Response, idx: number) => (
+              <div
+                key={String(item.url)}
+                className="relative group"
+                onMouseEnter={() => setHoveredIndex(idx)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    delay: idx * 0.2,
+                  }}
+                  className="relative z-10 p-2"
                 >
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.5,
-                      delay: idx * 0.2,
-                    }}
-                    onMouseEnter={() => setHoveredIndex(idx)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                  >
-                    <AnimatePresence>
-                      {hoveredIndex === idx && (
-                        <motion.span
-                          className="absolute inset-0 h-full w-full bg-slate-700 z-0 dark:bg-slate-800/[0.8] block rounded-2xl"
-                          layoutId="hoverBackground"
-                          initial={{ opacity: 0 }}
-                          animate={{
-                            opacity: 1,
-                            transition: { duration: 0.1 },
-                          }}
-                          exit={{
-                            opacity: 0,
-                            transition: { duration: 0.1, delay: 0.3 },
-                          }}
-                        />
-                      )}
-                    </AnimatePresence>
-                    <div>
-                      <ProjectsModal id={idx} data={item} />
-                    </div>
-                  </motion.div>
-                </Parallax>
-              ))}
-            </motion.div>
-          </Parallax>
+                  <ProjectsModal id={idx} data={item} />
+                </motion.div>
+                
+                <AnimatePresence>
+                  {hoveredIndex === idx && (
+                    <motion.span
+                      className="absolute inset-0 bg-slate-700/80 dark:bg-slate-800/[0.8] rounded-2xl"
+                      layoutId="hoverBackground"
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                        transition: { duration: 0.1 },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        transition: { duration: 0.1, delay: 0.3 },
+                      }}
+                      style={{ zIndex: 0 }}
+                    />
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </motion.div>
         )}
       </div>
     </div>

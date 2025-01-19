@@ -19,7 +19,7 @@ export default function Experience() {
   return (
     <div className="experience min-h-screen">
       <div className="px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <Parallax speed={-5}>
+        <Parallax speed={-1}>
           <motion.h1
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -48,7 +48,7 @@ export default function Experience() {
             >
               <TabsList
                 style={{ borderRadius: "8px" }}
-                className="w-full sm:w-1/3 min-h-fit flex flex-col justify-start items-center bg-slate-900 p-1 sm:p-2 gap-1 sm:gap-2 rounded-lg"
+                className="w-full sm:w-1/3 min-h-fit flex sm:flex-col  justify-start items-center bg-slate-900 p-1 sm:p-2 gap-1 sm:gap-2 rounded-lg"
               >
                 {config.experiences.map((exp) => (
                   <TabsTrigger

@@ -28,67 +28,53 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="contact min-h-screen px-72 py-16">
-      <Parallax speed={-5}>
+    <div className="contact min-h-screen px-4 sm:px-8 lg:px-16 py-16">
+      <Parallax speed={-2}>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mx-32 my-24"
+          className="text-center mb-12"
         >
-          <h1 className="contact-title" id="contact">
-            Love to hear from you,
-          </h1>
-          <h1 className="contact-title">Get in touch 👋</h1>
+          {/* <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold" id="contact">
+            Let&apos;s connect
+          </h1> */}
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Let&apos;s connect👋</h1>
         </motion.div>
       </Parallax>
       <Parallax speed={5}>
-        <form ref={form} onSubmit={handleSubmit}>
+        <form ref={form} onSubmit={handleSubmit} className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="contact_inputs"
+            className="flex flex-col sm:flex-row sm:gap-8 gap-4"
           >
-            <div
-              style={{
-                minWidth: "200px",
-                flex: "1",
-                marginRight: "10px",
-              }}
-              className="flex flex-col gap-3"
-            >
-              <label htmlFor="name" style={{ color: "#f8f8f2" }}>
+            <div className="flex-1">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-300">
                 Your name
               </label>
               <input
                 type="text"
                 id="name"
                 name="user_name"
-                className="full-width pretty-input"
+                className="w-full mt-1 p-3 rounded border bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
                 placeholder="Please enter your name"
                 required
               />
             </div>
-            <div
-              style={{
-                minWidth: "200px",
-                flex: "1",
-                marginRight: "10px",
-              }}
-              className="flex flex-col gap-3"
-            >
-              <label htmlFor="email" style={{ color: "#f8f8f2" }}>
+            <div className="flex-1">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                 Your email
               </label>
               <input
                 type="email"
                 id="email"
                 name="user_email"
-                className="full-width pretty-input"
-                placeholder="Enter your Email"
+                className="w-full mt-1 p-3 rounded border bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="Enter your email"
                 required
               />
             </div>
@@ -98,16 +84,16 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col gap-3 my-8"
+            className="mt-6"
           >
-            <label htmlFor="message" style={{ color: "#f8f8f2" }}>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-300">
               Message
             </label>
             <textarea
               id="message"
               name="message"
               rows={5}
-              className="full-width pretty-input"
+              className="w-full mt-1 p-3 rounded border bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
               placeholder="Let me know your thoughts"
               required
             ></textarea>
@@ -117,13 +103,7 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            style={{
-              width: "45%",
-              backgroundColor: "#64ffda",
-              color: "#333",
-              fontWeight: "600",
-            }}
-            className="p-3 my-4 flex align-center justify-center gap-2"
+            className="w-full sm:w-auto mt-6 px-6 py-3 bg-green-400 text-black font-semibold rounded hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 flex items-center justify-center gap-2"
             type="submit"
           >
             Just Send

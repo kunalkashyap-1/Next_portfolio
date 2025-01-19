@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import config from "@/config";
 import { useState } from "react";
 
-const categories = ["Frontend", "Backend", "Tools","Framework"];
+const categories = ["Frontend", "Backend", "Tools", "Framework"];
 
 export default function TechStack() {
   const [activeCategory, setActiveCategory] = useState("Frontend");
@@ -11,34 +11,37 @@ export default function TechStack() {
   return (
     <div
       style={{
-        // backgroundAttachment: "fixed",
         borderRadius: "7px",
       }}
-      className="flex justify-center items-center"
+      className="flex justify-center items-center px-4 sm:px-8"
     >
-      <div className=" w-full space-y-6">
-        <h2 className="text-2xl font-semibold text-green-300">
+      <div className="w-full space-y-6">
+        <h2 className="text-xl sm:text-2xl font-semibold text-green-300 text-center sm:text-left">
           Here are a few skills I&apos;ve acquired:
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6">
-          <div className="space-y-2">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant="ghost"
-                style={{ borderRadius: "7px" }}
-                className={`w-full justify-start ${
-                  activeCategory === category
-                    ? "bg-green-700 text-white hover:bg-green-600 hover:text-white"
-                    : "text-green-300 hover:text-white hover:bg-green-800"
-                }`}
-                onClick={() => setActiveCategory(category)}
-              >
-                {category}
-              </Button>
-            ))}
+          {/* Horizontal Scrollable Categories */}
+          <div className="space-y-2 md:space-y-0 md:block overflow-x-auto md:overflow-visible">
+            <div className="flex md:flex-col gap-2">
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant="ghost"
+                  style={{ borderRadius: "7px" }}
+                  className={`flex-shrink-0 whitespace-nowrap ${
+                    activeCategory === category
+                      ? "bg-green-700 text-white hover:bg-green-600 hover:text-white"
+                      : "text-green-300 hover:text-white hover:bg-green-800"
+                  }`}
+                  onClick={() => setActiveCategory(category)}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
           </div>
 
+          {/* Skills Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {config.skills
               .filter((tech) => tech.category === activeCategory)

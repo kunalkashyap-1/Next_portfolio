@@ -163,7 +163,7 @@ const config = {
   ],
   experiences: [
     {
-      companyName: "STACKIOT TECHNOLOGIES Pvt. Ltd.",
+      companyName: "StackIOT Technologies Pvt. Ltd.",
       roles: [
         {
           position: "Software Engineer",

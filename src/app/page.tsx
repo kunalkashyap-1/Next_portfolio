@@ -11,7 +11,7 @@ import VantaBackground from "@/components/vanta_bg";
 
 export default function Home() {
   return (
-    <main>
+    <main className="max-w-[100dvw]">
       <ParallaxWrapper>
         <VantaBackground>
             <Navbar />
