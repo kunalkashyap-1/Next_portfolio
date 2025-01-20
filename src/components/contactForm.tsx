@@ -10,13 +10,13 @@ export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null);
   const [showToast, setShowToast] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const serviceId = process.env.NEXT_PUBLIC_YOUR_SERVICE_ID!;
     const templateId = process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID!;
     const publicKey = process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY!;
 
-    emailjs.sendForm(serviceId, templateId, form.current!, publicKey).then(
+    await emailjs.sendForm(serviceId, templateId, form.current!, publicKey).then(
       () => {
         setShowToast(true);
       },

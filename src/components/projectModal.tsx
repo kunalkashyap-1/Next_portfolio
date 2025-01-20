@@ -29,7 +29,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
         <DialogTrigger className="w-full">
           <Card
             key={id}
-            className="w-full h-[27rem] bg-slate-800 flex flex-col justify-between hover:shadow-lg rounded-xl transition-all duration-300 hover:scale-[1.01] cursor-pointer"
+            className="w-full bg-slate-800 flex flex-col justify-between hover:shadow-lg rounded-xl transition-all duration-300 hover:scale-[1.01] cursor-pointer"
           >
             <div className="flex flex-col h-full">
               <div className="sm:h-1/3 lg:h-1/2 overflow-hidden rounded-t-xl flex items-center justify-center">
@@ -38,7 +38,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
                     <Image
                       src={projectImage.image}
                       alt={projectImage.name}
-                      className="rounded-t-xl w-full h-full object-cover"
+                      className="rounded-t-xl w-full h-[12rem] object-cover"
                       width={500}
                       height={300}
                     />
@@ -74,7 +74,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex pt-3 justify-around">
+                  <div className="flex pt-3 justify-around flex-wrap gap-2">
                     <Button
                       asChild
                       style={{
@@ -108,7 +108,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <FaGlobe className="w-4 h-4" /> Live Demo
+                          <FaGlobe className="w-4 h-4" /> Live
                         </a>
                       </Button>
                     )}
@@ -125,7 +125,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
           className="w-full bg-slate-800 flex flex-col justify-between hover:shadow-lg rounded-xl transition-all duration-300 hover:scale-[1.01] cursor-pointer"
         >
           <div className="flex flex-col h-full">
-            <div className="h-1/2 overflow-hidden rounded-t-xl flex items-center justify-center">
+            <div className=" overflow-hidden rounded-t-xl flex items-center justify-center">
               <div className="h-full w-full">
                 {projectImage?.image ? (
                   <Image
@@ -142,7 +142,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
                 )}
               </div>
             </div>
-            <div className="h-1/2 flex flex-col justify-between">
+            <div className=" flex flex-col justify-between">
               <CardHeader className="p-4">
                 <CardTitle className="text-xl font-bold">
                   {projectImage?.name || data.name}
@@ -167,7 +167,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
                     </Badge>
                   ))}
                 </div>
-                <div className="flex justify-around pt-3">
+                <div className="flex flex-wrap justify-around pt-3 gap-2">
                   <Button
                     asChild
                     style={{
@@ -201,7 +201,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <FaGlobe className="w-4 h-4" /> Live Demo
+                        <FaGlobe className="w-4 h-4" /> Live
                       </a>
                     </Button>
                   )}
@@ -264,7 +264,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
             </div>
           </div>
 
-          <div className="flex gap-4 pt-4">
+          <div className="flex  flex-wrap gap-4 pt-4">
             <Button
               asChild
               style={{ backgroundColor: "#10B981", borderRadius: "0.4375rem" }}
@@ -292,7 +292,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaGlobe className="w-4 h-4 mr-2" /> Live Demo
+                  <FaGlobe className="w-4 h-4 mr-2" /> Live
                 </a>
               </Button>
             )}

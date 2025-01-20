@@ -70,8 +70,8 @@ export default function Projects() {
           className="title-heading text-center text-4xl md:text-5xl font-bold"
           id="projects"
         >
-        Projects
-      </motion.h1>
+          Projects
+        </motion.h1>
       </Parallax>
 
       <div className="container mx-auto">
@@ -84,13 +84,13 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5"
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5 "
           >
             {repos.map((item: Response, idx: number) => (
               <div
                 key={String(item.url)}
-                className="relative group"
+                className="relative group h-fit"
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
@@ -106,7 +106,7 @@ export default function Projects() {
                 >
                   <ProjectsModal id={idx} data={item} />
                 </motion.div>
-                
+
                 <AnimatePresence>
                   {hoveredIndex === idx && (
                     <motion.span

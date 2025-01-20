@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
     >
       <Link href="/" className="logo">
         <Image
-          src="https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/logo.png"
+          src="/logo.png"
           alt="logo"
           width={70}
           height={70}

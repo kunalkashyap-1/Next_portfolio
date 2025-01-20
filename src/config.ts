@@ -200,33 +200,27 @@ const config = {
 
   images: {
     Encypher_chat_app: {
-      image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/encypher.png",
+      image: "/encypher.png",
       name: "Encypher Chat App",
     },
     Auth_JWT_MERN: {
-      image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/AuthJWT.png",
+      image: "/AuthJWT.png",
       name: "JWT Authentication API",
     },
     vaartalap: {
-      image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/vaartalap.png",
+      image: "/vaartalap.png",
       name: "Vaartalap: AI Video Conferencing App",
     },
     feedParsify_doc: {
-      image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/feedparsify.png",
+      image: "/feedparsify.png",
       name: "Feed parsify scraper",
     },
     IBM_AI_project: {
-      image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/movierecommender.png",
+      image: "/movierecommender.png",
       name: "Movie Recommendation system",
     },
     "Google-keep_Dummy": {
-      image:
-        "https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/images/googlekeep.png",
+      image: "/googlekeep.png",
       name: "Google Keep clone",
     },
   },
