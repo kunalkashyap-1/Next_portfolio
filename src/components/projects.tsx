@@ -1,12 +1,15 @@
 "use client";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import ProjectsModal from "./projectModal";
-import { Response } from "../../models/configModel";
 import { useState, useEffect } from "react";
+import { ProjectsModal } from "./projectModal";
+import { Response } from "@/types/types";
+import { AnimatePresence, motion } from "framer-motion";
+import { Parallax } from "react-scroll-parallax";
 
 export default function Projects() {
   const [repos, setRepos] = useState<Response[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchPinnedRepos = async () => {
@@ -45,7 +48,6 @@ export default function Projects() {
         `;
 
         const result = await client.query({ query });
-
         setRepos(result.data.user.pinnedItems.nodes);
         setIsLoading(false);
       } catch (error) {
@@ -58,38 +60,76 @@ export default function Projects() {
   }, []);
 
   return (
-    <section
-      className="my-4 mx-14"
-      data-aos="fade-up"
-    >
-      <h1 className="title-heading" id="projects">
-        Projects
-      </h1>
+    <div className="projects min-h-screen w-full py-16 px-4 md:px-8 lg:px-24">
+      <Parallax speed={-2}>
+        <motion.h1
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="title-heading text-center text-4xl md:text-5xl font-bold"
+          id="projects"
+        >
+          Projects
+        </motion.h1>
+      </Parallax>
+
       <div className="container mx-auto">
         {isLoading ? (
           <div className="flex items-center justify-center h-20">
             <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-white-900"></div>
           </div>
         ) : (
-          // md:grid-cols-2 lg:grid-cols-3
-          <div className="grid sm:grid-cols-1  gap-9 my-5">
-            {repos.map((item: Response, i: number) => {
-              // console.log(i);
-              return (
-                <div
-                  data-aos="fade-right"
-                  data-aos-delay={50}
-                  data-aos-duration={800}
-                  key={i}
-                  className={`col-span-6 sm:col-span-1 ${i % 2 == 0 ? "ml-4" : "mr-4"}`}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5 "
+          >
+            {repos.map((item: Response, idx: number) => (
+              <div
+                key={String(item.url)}
+                className="relative group h-fit"
+                onMouseEnter={() => setHoveredIndex(idx)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    delay: idx * 0.2,
+                  }}
+                  className="relative z-10 p-2"
                 >
-                  <ProjectsModal id={i} data={item} />
-                </div>
-              );
-            })}
-          </div>
+                  <ProjectsModal id={idx} data={item} />
+                </motion.div>
+
+                <AnimatePresence>
+                  {hoveredIndex === idx && (
+                    <motion.span
+                      className="absolute inset-0 bg-slate-700/80 dark:bg-slate-800/[0.8] rounded-2xl"
+                      layoutId="hoverBackground"
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                        transition: { duration: 0.1 },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        transition: { duration: 0.1, delay: 0.3 },
+                      }}
+                      style={{ zIndex: 0 }}
+                    />
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </motion.div>
         )}
       </div>
-    </section>
+    </div>
   );
 }

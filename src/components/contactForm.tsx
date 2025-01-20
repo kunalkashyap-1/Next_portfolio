@@ -1,24 +1,23 @@
 "use client";
-import Image from "next/image";
-import upRightArrow from "../icons/up-right-arrow.png";
+import { GoArrowUpRight } from "react-icons/go";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Toast from "./toast";
+import { Parallax } from "react-scroll-parallax";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null);
   const [showToast, setShowToast] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const serviceId = process.env.NEXT_PUBLIC_YOUR_SERVICE_ID!;
     const templateId = process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID!;
     const publicKey = process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY!;
-    // console.log(publicKey);
 
-    emailjs.sendForm(serviceId, templateId, form.current!, publicKey).then(
-      (result) => {
-        // console.log(result.text);
+    await emailjs.sendForm(serviceId, templateId, form.current!, publicKey).then(
+      () => {
         setShowToast(true);
       },
       (error) => {
@@ -29,81 +28,103 @@ export default function ContactForm() {
   };
 
   return (
-    <div data-aos="fade-up" data-aos-duration={2000} className="contact">
-      <h1 className="contact-title" id="contact">
-        Love to hear from you,
-      </h1>
-      <h1 className="contact-title">Get in touch 👋</h1>
-      <form ref={form} onSubmit={handleSubmit}>
-        <div className="contact_inputs">
-          <div
-            style={{
-              minWidth: "200px",
-              flex: "1",
-              marginRight: "10px",
-            }}
-            className="flex flex-col gap-3"
-          >
-            <label htmlFor="name" style={{ color: "#f8f8f2" }}>
-              Your name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="user_name"
-              className="full-width pretty-input"
-              placeholder="Please enter your name"
-              required
-            />
-          </div>
-          <div
-            style={{
-              minWidth: "200px",
-              flex: "1",
-              marginRight: "10px",
-            }}
-            className="flex flex-col gap-3"
-          >
-            <label htmlFor="email" style={{ color: "#f8f8f2" }}>
-              Your email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="user_email"
-              className="full-width pretty-input"
-              placeholder="Enter your Email"
-              required
-            />
-          </div>
-        </div>
-        <div className="flex flex-col gap-3 my-8">
-          <label htmlFor="message" style={{ color: "#f8f8f2" }}>
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={5}
-            className="full-width pretty-input"
-            placeholder="Let me know your thoughts"
-            required
-          ></textarea>
-        </div>
-        <button
-          style={{
-            width: "45%",
-            backgroundColor: "#64ffda",
-            color: "#333",
-            fontWeight: "600",
-          }}
-          className="p-3 my-4 flex align-center justify-center gap-2"
-          type="submit"
+    <div className="contact min-h-screen px-4 sm:px-8 lg:px-16 py-16">
+      <Parallax speed={-2}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
         >
-          Just Send
-          <Image src={upRightArrow} alt="up icon" width={17} height={10} />
-        </button>
-      </form>
+          {/* <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold" id="contact">
+            Let&apos;s connect
+          </h1> */}
+          <h1
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold"
+            id="contact"
+          >
+            Let&apos;s connect👋
+          </h1>
+        </motion.div>
+      </Parallax>
+      <Parallax speed={5}>
+        <form ref={form} onSubmit={handleSubmit} className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col sm:flex-row sm:gap-8 gap-4"
+          >
+            <div className="flex-1">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-300"
+              >
+                Your name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="user_name"
+                className="w-full mt-1 p-3 rounded border bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="Please enter your name"
+                required
+              />
+            </div>
+            <div className="flex-1">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-300"
+              >
+                Your email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="user_email"
+                className="w-full mt-1 p-3 rounded border bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mt-6"
+          >
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-300"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              className="w-full mt-1 p-3 rounded border bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
+              placeholder="Let me know your thoughts"
+              required
+            ></textarea>
+          </motion.div>
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-full sm:w-auto mt-6 px-6 py-3 bg-green-400 text-black font-semibold rounded hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 flex items-center justify-center gap-2"
+            type="submit"
+          >
+            Just Send
+            <GoArrowUpRight size={25} />
+          </motion.button>
+        </form>
+      </Parallax>
       <Toast
         message="Message sent successfully! I'll get back to you soon."
         showToast={showToast}

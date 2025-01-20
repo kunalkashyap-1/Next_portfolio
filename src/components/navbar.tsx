@@ -1,8 +1,9 @@
 "use client";
-import config from "../config";
-import { NavLink } from "../../models/configModel";
+import config from "@/config";
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,52 +13,56 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav data-aos="fade" className="navbar">
-      <a href="/" className="logo">
+    <motion.nav
+      className="navbar"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+    >
+      <Link href="/" className="logo">
         <Image
-          src="https://raw.githubusercontent.com/kunalkashyap-1/Next_portfolio/master/src/icons/logo.png"
+          src="/logo.png"
           alt="logo"
-          width={50}
-          height={50}
-          style={{
-            width: "50",
-            height: "auto",
-          }}
+          width={70}
+          height={70}
+          style={{ width: "70", height: "auto" }}
         />
-      </a>
+      </Link>
+
       <div
         className={`menu-icon ${isMenuOpen ? "open" : ""}`}
         onClick={toggleMenu}
       >
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
+        <motion.div
+          className="bar"
+          animate={isMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+        />
+        <motion.div
+          className="bar"
+          animate={isMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+        />
+        <motion.div
+          className="bar"
+          animate={isMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+        />
       </div>
-      <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
-        {config.navLinks.map(({ name, url }: NavLink, i: number) => (
-          <li
-            data-aos="fade-down"
-            data-aos-delay={`${50 * i}`}
-            data-aos-duration={500}
-            key={i}
-          >
-            <a href={url} onClick={toggleMenu} className="w-full text-center">
-              {name}
-            </a>
-          </li>
-        ))}
-        <li data-aos="fade-down" data-aos-delay={`250`}>
-          <a
-            className="resume-button"
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
-        </li>
-      </ul>
-    </nav>
+
+      <AnimatePresence>
+        <motion.ul
+          className={`navbar-menu ${isMenuOpen ? "open" : ""}`}
+          initial="closed"
+          animate={isMenuOpen ? "open" : "closed"}
+        >
+          {config.navLinks.map(({ name, url }, i: number) => (
+            <motion.li key={i}>
+              <a href={url} onClick={() => setIsMenuOpen(false)}>
+                {name}
+              </a>
+            </motion.li>
+          ))}
+        </motion.ul>
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 
