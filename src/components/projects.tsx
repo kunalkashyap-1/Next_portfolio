@@ -69,6 +69,7 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           className="title-heading text-center text-4xl md:text-5xl font-bold"
           id="projects"
+          style={{ willChange: "transform" }}
         >
           Projects
         </motion.h1>
@@ -86,6 +87,7 @@ export default function Projects() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5 "
+            style={{ willChange: "transform" }}
           >
             {repos.map((item: Response, idx: number) => (
               <div
@@ -103,6 +105,7 @@ export default function Projects() {
                     delay: idx * 0.2,
                   }}
                   className="relative z-10 p-2"
+                  style={{ willChange: "transform" }}
                 >
                   <ProjectsModal id={idx} data={item} />
                 </motion.div>
@@ -121,7 +124,7 @@ export default function Projects() {
                         opacity: 0,
                         transition: { duration: 0.1, delay: 0.3 },
                       }}
-                      style={{ zIndex: 0 }}
+                      style={{ zIndex: 0, willChange: "transform" }}
                     />
                   )}
                 </AnimatePresence>

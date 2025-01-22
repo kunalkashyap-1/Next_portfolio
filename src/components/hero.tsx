@@ -33,8 +33,9 @@ export default function Hero() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
       className="max-w-xl text-lg text-gray-400 text-justify"
+      style={{ willChange: "transform" }}
     >
-      I specialize in developing interactive online apps using both front-end
+      Proficient in developing interactive online apps using both front-end
       and back-end technologies. I prioritize providing user-friendly solutions.
     </motion.p>
   );
@@ -43,7 +44,8 @@ export default function Hero() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.6 }}
-      className="flex gap-7 mt-4 justify-center items-center"
+      className="flex gap-7 mt-4 justify-center items-center transition-all"
+      style={{ willChange: "transform" }}
     >
       <a
         target="_blank"
@@ -97,6 +99,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
         className="hidden lg:block"
+        style={{ willChange: "transform" }}
       >
         <HeroCard />
       </motion.div>
