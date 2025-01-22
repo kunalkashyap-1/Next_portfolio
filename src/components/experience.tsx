@@ -1,12 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight, Calendar } from "lucide-react";
 import config from "@/config";
@@ -27,6 +22,7 @@ export default function Experience() {
             transition={{ duration: 0.8 }}
             id="experience"
             className="title-heading text-center py-8 sm:py-16 text-3xl sm:text-4xl font-bold"
+            style={{ willChange: "transform" }}
           >
             Experience
           </motion.h1>
@@ -39,6 +35,7 @@ export default function Experience() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="mb-8 sm:mb-16"
+            style={{ willChange: "transform" }}
           >
             <Tabs
               value={activeTab}
@@ -65,9 +62,11 @@ export default function Experience() {
 
               <div className="w-full sm:w-2/3 mt-4 sm:mt-0 sm:ml-4">
                 <div
-                  style={{
-                    // minHeight: "25rem",
-                  }}
+                  style={
+                    {
+                      // minHeight: "25rem",
+                    }
+                  }
                 >
                   {config.experiences.map((exp) => (
                     <TabsContent

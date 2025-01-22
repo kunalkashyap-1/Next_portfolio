@@ -28,7 +28,7 @@ export default function TechStack() {
                   key={category}
                   variant="ghost"
                   style={{ borderRadius: "7px" }}
-                  className={`flex-shrink-0 whitespace-nowrap ${
+                  className={`flex-shrink-0 whitespace-nowrap  text-lg ${
                     activeCategory === category
                       ? "bg-green-700 text-white hover:bg-green-600 hover:text-white"
                       : "text-green-300 hover:text-white hover:bg-green-800"
@@ -64,7 +64,7 @@ export default function TechStack() {
                       <IconComponent size={30} color={tech.color} />
                     </div>
                     <div>
-                      <p className="font-medium text-white mt-3 h-3">
+                      <p className="text-white mt-3 h-3">
                         {tech.name}
                       </p>
                       <p className="text-sm text-green-300">

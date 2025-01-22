@@ -17,6 +17,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
           id="about"
           className="title-heading text-center py-12 sm:py-16 sm:px-8 md:px-32 whitespace-nowrap"
+          style={{ willChange: "transform" }}
         >
           About Me
         </motion.h1>
@@ -59,6 +60,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              style={{ willChange: "transform" }}
             >
               <p className="text-justify">
                 A Full Stack Developer who turns caffeine into code, with

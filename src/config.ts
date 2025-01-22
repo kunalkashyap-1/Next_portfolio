@@ -88,7 +88,7 @@ const config = {
       experience: "1 year",
       icon: SiElectron,
       color: "#356B72",
-      category: "Frontend",
+      category: "Framework",
     },
     {
       name: "Tailwind CSS",
