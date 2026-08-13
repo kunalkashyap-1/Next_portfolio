@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface NavLink {
   name: string;
   url: string;
@@ -6,7 +8,7 @@ export interface NavLink {
 export interface Skill {
   name: string;
   experience: string;
-  icon: any;
+  icon: React.ComponentType<{ size?: number; color?: string; className?: string }>;
   color: string;
   category: string;
 }
