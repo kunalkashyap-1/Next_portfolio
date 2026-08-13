@@ -1,4 +1,5 @@
 import { GoDownload, GoMail } from "react-icons/go";
+import { FiPhone } from "react-icons/fi";
 import { RiLinkedinLine, RiGithubLine } from "react-icons/ri";
 import HeroCard from "./hero_card";
 import { motion } from "framer-motion";
@@ -24,7 +25,7 @@ export default function Hero() {
       className="medium-heading"
       style={{ color: "#3BCAC9" }}
     >
-      Full Stack Developer
+      AI Systems Engineer
     </motion.h3>
   );
   const four = (
@@ -35,8 +36,7 @@ export default function Hero() {
       className="max-w-xl text-lg text-gray-400 text-justify"
       style={{ willChange: "transform" }}
     >
-      Proficient in developing interactive online apps using both front-end
-      and back-end technologies. I prioritize providing user-friendly solutions.
+      AI Systems Engineer with 2+ years building LLM systems, backend APIs, RAG, local inference, real-time AI pipelines, and full-stack applications.
     </motion.p>
   );
   const five = (
@@ -62,10 +62,16 @@ export default function Hero() {
         <RiGithubLine />
       </a>
       <a
-        href="mailto:kunal.kashyap.8775.com"
+        href="mailto:kunal.kashyap.8775@gmail.com"
         className="text-3xl text-gray-400 hover:text-green-300 hover:scale-110 transition-transform duration-300"
       >
         <GoMail />
+      </a>
+      <a
+        href="tel:+918743036307"
+        className="text-3xl text-gray-400 hover:text-green-300 hover:scale-110 transition-transform duration-300"
+      >
+        <FiPhone />
       </a>
       <a
         href="/resume.pdf"

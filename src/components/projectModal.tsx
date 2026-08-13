@@ -22,49 +22,43 @@ import config from "@/config";
 
 export function ProjectsModal({ data, id }: { data: Response; id: number }) {
   const projectImage = config.images[data.name as keyof typeof config.images];
+  const projectDisplayName = projectImage?.name || data.name;
+  const illustrationPath = projectImage?.image || `/illustrations/${data.name.toLowerCase()}.png`;
 
   return (
     <Dialog>
-      <div className="hidden sm:block w-full">
-        <DialogTrigger className="w-full">
+      <div className="hidden sm:block w-full h-full">
+        <DialogTrigger className="w-full h-full">
           <Card
             key={id}
-            className="w-full bg-slate-800 flex flex-col justify-between hover:shadow-lg rounded-xl transition-all duration-300 hover:scale-[1.01] cursor-pointer"
+            className="w-full h-full bg-slate-800 flex flex-col hover:shadow-lg rounded-xl transition-all duration-300 hover:scale-[1.01] cursor-pointer"
           >
             <div className="flex flex-col h-full">
-              <div className="sm:h-1/3 lg:h-1/2 overflow-hidden rounded-t-xl flex items-center justify-center">
-                <div className="h-full w-full">
-                  {projectImage?.image ? (
-                    <Image
-                      src={projectImage.image}
-                      alt={projectImage.name}
-                      className="rounded-t-xl w-full h-[12rem] object-cover"
-                      width={500}
-                      height={300}
-                    />
-                  ) : (
-                    <div className="flex items-center justify-center h-full text-gray-200">
-                      No Image Available
-                    </div>
-                  )}
-                </div>
+              <div className="h-68 flex-shrink-0 overflow-hidden rounded-t-xl flex items-center justify-center bg-gradient-to-br from-slate-700 to-slate-800">
+                <Image
+                  src={illustrationPath}
+                  alt={projectDisplayName}
+                  width={400}
+                  height={256}
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <div className="h-1/2 flex flex-col justify-between">
-                <CardHeader className="p-4">
+              <div className="flex-1 flex flex-col justify-between p-4 min-h-0">
+                <CardHeader className="p-0 pb-3 flex-shrink-0">
                   <CardTitle className="text-xl font-bold">
-                    {projectImage?.name || data.name}
+                    {projectDisplayName}
                   </CardTitle>
-                  <CardDescription className="text-gray-400 sm:line-clamp-none md:line-clamp-2">
+                  <CardDescription className="text-gray-400 line-clamp-2">
                     {data.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="p-4">
-                  <div className="flex flex-wrap gap-2">
-                    {data.languages.nodes.map((lang, index) => (
+                <CardContent className="p-0 flex-1 flex flex-col justify-end">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {data.languages.nodes.slice(0, 3).map((lang, index) => (
                       <Badge
                         key={index}
                         variant="secondary"
-                        className="border-none text-md"
+                        className="border-none text-sm"
                         style={{
                           color: "#10B981",
                           borderRadius: "0.4375rem",
@@ -73,8 +67,20 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
                         {lang.name}
                       </Badge>
                     ))}
+                    {data.languages.nodes.length > 3 && (
+                      <Badge
+                        variant="secondary"
+                        className="border-none text-sm"
+                        style={{
+                          color: "#10B981",
+                          borderRadius: "0.4375rem",
+                        }}
+                      >
+                        +{data.languages.nodes.length - 3}
+                      </Badge>
+                    )}
                   </div>
-                  <div className="flex pt-3 justify-around flex-wrap gap-2">
+                  <div className="flex pt-2 justify-around flex-wrap gap-2">
                     <Button
                       asChild
                       style={{
@@ -119,45 +125,37 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
           </Card>
         </DialogTrigger>
       </div>
-      <div className="sm:hidden">
+      <div className="sm:hidden w-full h-full">
         <Card
           key={id}
-          className="w-full bg-slate-800 flex flex-col justify-between hover:shadow-lg rounded-xl transition-all duration-300 hover:scale-[1.01] cursor-pointer"
+          className="w-full h-full bg-slate-800 flex flex-col hover:shadow-lg rounded-xl transition-all duration-300 hover:scale-[1.01] cursor-pointer"
         >
           <div className="flex flex-col h-full">
-            <div className=" overflow-hidden rounded-t-xl flex items-center justify-center">
-              <div className="h-full w-full">
-                {projectImage?.image ? (
-                  <Image
-                    src={projectImage.image}
-                    alt={projectImage.name}
-                    className="rounded-t-xl w-full h-full object-contain"
-                    width={500}
-                    height={300}
-                  />
-                ) : (
-                  <div className="flex items-center justify-center h-full text-gray-200">
-                    No Image Available
-                  </div>
-                )}
-              </div>
+            <div className="h-54 flex-shrink-0 overflow-hidden rounded-t-xl flex items-center justify-center bg-gradient-to-br from-slate-700 to-slate-800">
+              <Image
+                src={illustrationPath}
+                alt={projectDisplayName}
+                width={400}
+                height={192}
+                className="w-full h-full object-contain"
+              />
             </div>
-            <div className=" flex flex-col justify-between">
-              <CardHeader className="p-4">
-                <CardTitle className="text-xl font-bold">
-                  {projectImage?.name || data.name}
+            <div className="flex-1 flex flex-col justify-between p-4 min-h-0">
+              <CardHeader className="p-0 pb-3 flex-shrink-0">
+                <CardTitle className="text-lg font-bold">
+                  {projectDisplayName}
                 </CardTitle>
-                <CardDescription className="text-gray-400 sm:line-clamp-none md:line-clamp-2">
+                <CardDescription className="text-gray-400 line-clamp-2">
                   {data.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-4">
-                <div className="flex flex-wrap gap-2">
-                  {data.languages.nodes.map((lang, index) => (
+              <CardContent className="p-0 flex-1 flex flex-col justify-end">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {data.languages.nodes.slice(0, 3).map((lang, index) => (
                     <Badge
                       key={index}
                       variant="secondary"
-                      className="border-none text-md"
+                      className="border-none text-sm"
                       style={{
                         color: "#10B981",
                         borderRadius: "0.4375rem",
@@ -166,8 +164,20 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
                       {lang.name}
                     </Badge>
                   ))}
+                  {data.languages.nodes.length > 3 && (
+                    <Badge
+                      variant="secondary"
+                      className="border-none text-sm"
+                      style={{
+                        color: "#10B981",
+                        borderRadius: "0.4375rem",
+                      }}
+                    >
+                      +{data.languages.nodes.length - 3}
+                    </Badge>
+                    )}
                 </div>
-                <div className="flex flex-wrap justify-around pt-3 gap-2">
+                <div className="flex flex-wrap justify-around pt-2 gap-2">
                   <Button
                     asChild
                     style={{
@@ -216,26 +226,18 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
         className="max-w-3xl bg-slate-800 text-white p-6 rounded-lg"
         style={{ borderRadius: "0.4375rem" }}
       >
-        <div className="relative w-full h-64 overflow-hidden rounded-lg mb-4 flex items-center justify-center">
-          <div className="h-full w-full">
-            {projectImage?.image ? (
-              <Image
-                src={projectImage.image}
-                alt={projectImage.name}
-                width={2500}
-                height={2500}
-                className="rounded-lg object-contain"
-              />
-            ) : (
-              <div className="flex items-center justify-center h-full text-gray-500">
-                No Image Available
-              </div>
-            )}
-          </div>
+        <div className="relative w-full h-90 overflow-hidden rounded-lg mb-4 flex items-center justify-center bg-gradient-to-br from-slate-700 to-slate-800">
+          <Image
+            src={illustrationPath}
+            alt={projectDisplayName}
+            width={800}
+            height={320}
+            className="w-full h-full object-contain"
+          />
         </div>
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">
-            {projectImage?.name || data.name}
+            {projectDisplayName}
           </DialogTitle>
           <DialogDescription className="text-lg mt-2 text-gray-300">
             {data.description}
@@ -264,7 +266,7 @@ export function ProjectsModal({ data, id }: { data: Response; id: number }) {
             </div>
           </div>
 
-          <div className="flex  flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-4">
             <Button
               asChild
               style={{ backgroundColor: "#10B981", borderRadius: "0.4375rem" }}

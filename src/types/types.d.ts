@@ -3,23 +3,30 @@ export interface NavLink {
   url: string;
 }
 
-export interface Skills {
-  dev: string[];
-  tools: string[];
+export interface Skill {
+  name: string;
+  experience: string;
+  icon: any;
+  color: string;
+  category: string;
 }
 
-export interface Experiences {
-  companyName: string;
-  timeDuration: string;
+export interface Role {
   position: string;
+  timeDuration: string;
   description: string[];
+}
+
+export interface Experience {
+  companyName: string;
+  roles: Role[];
 }
 
 export interface Config {
   email: string;
   navLinks: NavLink[];
-  skills: Skills;
-  experiences: Experiences[];
+  skills: Skill[];
+  experiences: Experience[];
   images: {
     [repo_name: string]: {
       image: string;

@@ -48,6 +48,7 @@ export default function Projects() {
         `;
 
         const result = await client.query({ query });
+        console.log(result.data.user.pinnedItems.nodes);
         setRepos(result.data.user.pinnedItems.nodes);
         setIsLoading(false);
       } catch (error) {
@@ -86,13 +87,13 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5 "
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5 items-stretch"
             style={{ willChange: "transform" }}
           >
             {repos.map((item: Response, idx: number) => (
               <div
                 key={String(item.url)}
-                className="relative group h-fit"
+                className="relative group h-full"
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >

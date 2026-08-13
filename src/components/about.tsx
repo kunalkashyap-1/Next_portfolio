@@ -63,27 +63,15 @@ const About = () => {
               style={{ willChange: "transform" }}
             >
               <p className="text-justify">
-                A Full Stack Developer who turns caffeine into code, with
-                expertise in the{" "}
-                <span className="text-emerald-300">MERN stack</span>. I&apos;m
-                dedicated to crafting beautiful and efficient web applications.
-                Focused on building resilient and scalable solutions, I leverage{" "}
-                <span className="text-emerald-300">MongoDB</span>,{" "}
-                <span className="text-emerald-300">MySql</span>,{" "}
-                <span className="text-emerald-300">Express.js</span>,{" "}
-                <span className="text-emerald-300">React</span>, and{" "}
-                <span className="text-emerald-300">Node.js</span> to deliver
-                seamless and intuitive user experiences.
+                An <span className="text-emerald-300">AI Systems Engineer</span> with 2+ years of experience building backend systems and LLM-powered applications. I specialize in{" "}
+                <span className="text-emerald-300">Python, FastAPI, RAG</span>, and{" "}
+                <span className="text-emerald-300">local LLM inference</span>, with additional full-stack expertise across the MERN ecosystem.
               </p>
               <p className="text-justify">
-                With a robust foundation in both front-end and back-end
-                development, my mission is to transform ideas into innovative,
-                scalable, and user-centric products. Committed to continuous
-                growth and staying ahead in emerging technologies, I strive to
-                create impactful solutions that drive success. My skill set also
-                includes <span className="text-emerald-300">Electron</span>,{" "}
-                <span className="text-emerald-300">Docker</span>, and{" "}
-                <span className="text-emerald-300">Next.js</span>.
+                Experienced in developing real-time AI pipelines, production API development, and scalable solutions. My mission is to transform ideas into innovative,
+                AI-powered products. Committed to continuous growth and staying ahead in emerging technologies, I work with{" "}
+                <span className="text-emerald-300">LLMs, semantic search, prompt engineering</span>, and{" "}
+                <span className="text-emerald-300">model serving</span> to create impactful solutions that drive success.
               </p>
             </motion.div>
           </Parallax>

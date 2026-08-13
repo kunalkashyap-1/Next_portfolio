@@ -42,14 +42,14 @@ const HeroCard = () => {
                   <span className="text-white">skills:</span>
                   <span className="text-gray-400">{`['`}</span>
                   {[
+                    "Python",
+                    "FastAPI",
                     "React",
-                    "NextJS",
-                    "Redux",
-                    "Express",
-                    "MySql",
-                    "MongoDB",
+                    "Next.js",
+                    "LLMs",
+                    "RAG",
                     "Docker",
-                    "Electron",
+                    "PostgreSQL",
                   ].map((skill, index, array) => (
                     <span key={index}>
                       <span className="text-amber-300">{skill}</span>
